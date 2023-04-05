@@ -177,7 +177,7 @@
                       <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                      <form name="my-portofolio-form">
+                      <form id="myForm" name="my-portofolio-form">
                           <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" aria-describedby="nama" name="nama">
@@ -208,7 +208,24 @@
      </div>
    
     </div>
+<!-- Script untuk mengirim pesan ke nomor WhatsApp -->
+<script>
+  const form = document.querySelector('#myForm');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // mencegah form mengirim data secara normal
 
+    const name = form.elements['nama'].value;
+    const phoneNumber = '6287836783938'; // nomor telepon yang telah ditentukan
+    const email = form.elements['email'].value;
+    const message = form.elements['pesan'].value;
+
+    // format pesan WhatsApp
+    const whatsappMessage = `Halo, saya ${name} dengan email ${email}. Saya ingin bertanya tentang ${message}. Terima kasih!`;
+
+    // membuka chat di WhatsApp menggunakan URL wa.me
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  });
+</script>
        
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
