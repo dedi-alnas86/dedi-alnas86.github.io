@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentum Keajaiban - Buku Tawakal Terlaris</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background: #faf7f2; 
+      scroll-behavior: smooth;
+    }
+    .amiri { font-family: 'Amiri', serif; }
+    .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .hover-lift { transition: transform 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); }
+    .section-padding { padding: 5rem 1.5rem; }
+    @media (max-width: 768px) {
+      .section-padding { padding: 3rem 1rem; }
+    }
+    .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F7EF8A 100%); }
+    .green-gradient { background: linear-gradient(135deg, #0A4A3A 0%, #1a7d63 100%); }
+    .sticker {
+      position: absolute;
+      z-index: 10;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .countdown-box {
+      background: linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #fb923c 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    .countdown-digit {
+      font-size: 1.5rem;
+      font-weight: 900;
+      min-width: 2rem;
+      text-align: center;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+    .countdown-expired {
+      background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+    }
+  </style>
+</head>
+<body class="bg-amber-50 text-gray-800 overflow-x-hidden">
+
+  <!-- Sticker elemen dekoratif -->
+  <div class="sticker top-20 left-4 hidden lg:block">
+    <div class="bg-yellow-500/20 p-4 rounded-full">
+      <i class="fas fa-star text-yellow-500 text-2xl"></i>
+    </div>
+  </div>
+  
+  <div class="sticker top-1/3 right-6 hidden lg:block">
+    <div class="bg-green-900/20 p-4 rounded-full">
+      <i class="fas fa-mosque text-green-800 text-2xl"></i>
+    </div>
+  </div>
+  
+  <div class="sticker bottom-1/4 left-8 hidden lg:block">
+    <div class="gold-gradient p-4 rounded-full shadow-lg">
+      <i class="fas fa-gem text-white text-2xl"></i>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 w-full green-gradient text-white shadow-2xl z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="flex items-center gap-4">
+        <div class="gold-gradient p-3 rounded-full shadow-lg">
+          <i class="fas fa-book-quran text-2xl text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold amiri text-shadow">Momentum Keajaiban</h1>
+          <p class="text-xs text-amber-200">Buku Tawakal Terlaris 2025</p>
+        </div>
+      </div>
+      
+      <!-- Countdown kecil di header -->
+      <div class="hidden md:flex items-center gap-2">
+        <span class="text-sm text-amber-200">Berakhir dalam:</span>
+        <div id="header-countdown" class="flex items-center gap-1">
+          <div class="countdown-digit">23</div><span class="text-amber-200">:</span>
+          <div class="countdown-digit">59</div><span class="text-amber-200">:</span>
+          <div class="countdown-digit">59</div>
+        </div>
+      </div>
+      
+      <a href="#beli" class="gold-gradient hover:opacity-90 text-green-900 font-bold px-6 py-3 rounded-full shadow-lg hover-lift flex items-center gap-2">
+        <i class="fas fa-shopping-cart"></i>
+        Pesan Sekarang
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-16 text-center px-4 section-padding relative overflow-hidden">
+    <div class="absolute top-10 right-10 w-40 h-40 bg-yellow-500/5 rounded-full blur-2xl"></div>
+    <div class="absolute bottom-10 left-10 w-60 h-60 bg-green-900/5 rounded-full blur-2xl"></div>
+    
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-6">
+        <i class="fas fa-fire text-yellow-600"></i>
+        TERLARIS 2025 • RIBUAN UMAT TELAH BERUBAH
+      </div>
+      
+      <h1 class="mt-4 text-4xl sm:text-5xl md:text-6xl font-black text-green-900 leading-tight amiri">
+        Temukan <span class="text-yellow-600 relative">Momentum
+          <span class="absolute -top-4 -right-6 text-3xl">
+            <i class="fas fa-sparkles text-yellow-500"></i>
+          </span>
+        </span><br>
+        <span class="text-yellow-600">Keajaiban</span> Hidupmu
+      </h1>
+      
+      <p class="mt-6 text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Buku terbaik tentang tawakal, rezeki, dan keajaiban hidup bersama Allah. 
+        Panduan lengkap untuk mengubah hidup Anda dengan kekuatan tawakal yang benar.
+      </p>
+
+      <!-- Logo Masjid Emas dengan efek lebih mewah -->
+      <div class="mt-12 flex justify-center pulse">
+        <div class="relative">
+          <svg width="320" height="320" viewBox="0 0 200 200" class="drop-shadow-2xl">
+            <circle cx="100" cy="80" r="35" fill="url(#goldGradient)"/>
+            <path d="M100 20 L60 80 H140 Z" fill="url(#goldGradient)"/>
+            <rect x="70" y="80" width="60" height="100" fill="#0A4A3A"/>
+            <rect x="50" y="120" width="100" height="60" fill="url(#goldGradient)"/>
+            <circle cx="100" cy="50" r="15" fill="#0A4A3A"/>
+            
+            <defs>
+              <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#F7EF8A;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+          </svg>
+          
+          <div class="absolute -top-2 -right-2 w-12 h-12 gold-gradient rounded-full flex items-center justify-center shadow-lg">
+            <i class="fas fa-crown text-white"></i>
+          </div>
+        </div>
+      </div>
+
+      <a href="#beli" class="mt-12 inline-block gold-gradient hover:opacity-90 text-green-900 font-black text-xl sm:text-2xl py-5 px-12 rounded-2xl shadow-2xl hover-lift">
+        <i class="fas fa-bolt mr-2"></i>
+        Pesan Sekarang – Diskon 30%
+      </a>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-6 text-lg font-bold">
+        <div class="flex items-center gap-3 text-green-800">
+          <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-gift text-green-700"></i>
+          </div>
+          <p>Bonus Ebook "99 Doa Pembuka Rezeki"</p>
+        </div>
+        <div class="flex items-center gap-3 text-yellow-700">
+          <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-shipping-fast text-yellow-700"></i>
+          </div>
+          <p>Gratis Ongkir Seluruh Indonesia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION EMOSIONAL -->
+  <section class="py-16 bg-gradient-to-b from-amber-50 to-amber-100 section-padding">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-amber-200">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-red-800 amiri leading-tight">
+          <i class="fas fa-heart-crack text-red-600 mr-3"></i>
+          Capek hidup gini-gini terus?<br>
+          <span class="text-2xl sm:text-3xl md:text-4xl block mt-4">Rezeki seret • Hati gelisah • Masalah datang bertubi-tubi?</span>
+        </h2>
+        
+        <div class="mt-10 p-6 bg-red-50 rounded-2xl border-l-4 border-red-500 text-left">
+          <p class="text-xl sm:text-2xl text-gray-800 font-bold flex items-start">
+            <i class="fas fa-exclamation-circle text-red-600 mr-3 mt-1"></i>
+            Anda sudah berusaha habis-habisan, tapi kok rasanya jalan di tempat?<br>
+            <span class="block mt-3 text-lg sm:text-xl text-red-700">
+              Doa belum terkabul • Utang menumpuk • Rumah tangga sering ribut • Hati selalu resah
+            </span>
+          </p>
+        </div>
+        
+        <div class="mt-12 bg-gradient-to-r from-green-900 to-green-700 text-white rounded-2xl p-8 shadow-lg">
+          <p class="text-2xl sm:text-3xl font-black amiri">
+            Anda tidak sendiri tahu,<br>
+            <span class="text-yellow-300">solusinya bukan usaha lebih keras lagi</span>,<br>
+            tapi <span class="underline decoration-yellow-400">tawakal yang benar + amalan yang tepat</span>.
+          </p>
+          
+          <div class="mt-8 flex items-center justify-center gap-4">
+            <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+              <i class="fas fa-book-open text-white text-xl"></i>
+            </div>
+            <p class="text-xl text-amber-100">
+              Dan semua itu ada di dalam buku <span class="font-bold text-white">"Momentum Keajaiban"</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANFAAT -->
+  <section class="py-16 bg-white section-padding">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="inline-block mb-4">
+        <span class="text-green-900 bg-green-100 px-4 py-2 rounded-full font-bold">
+          <i class="fas fa-key mr-2"></i>RAHASIA TERBONGKAR
+        </span>
+      </div>
+      
+      <h2 class="text-4xl sm:text-5xl font-bold text-green-900 amiri mb-4">Keajaiban di Dalam Buku Ini</h2>
+      <p class="text-gray-600 text-lg mb-12 max-w-3xl mx-auto">Temukan rahasia hidup tenang dan berkah melalui tawakal yang benar</p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-b from-amber-50 to-white p-8 rounded-3xl shadow-xl hover-lift border border-amber-100">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto gold-gradient rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <i class="fas fa-praying-hands text-4xl text-white"></i>
+            </div>
+            <div class="absolute -top-2 -right-2 w-10 h-10 bg-green-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-sm"></i>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-green-900 amiri">Hati Tenang Bersama Allah</h3>
+          <p class="mt-4 text-gray-700 leading-relaxed">Amalan ringan 5–10 menit sehari yang membuat doa cepat terkabul dan hati selalu damai</p>
+          <div class="mt-6 pt-6 border-t border-amber-200">
+            <div class="flex justify-center gap-2">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-b from-amber-50 to-white p-8 rounded-3xl shadow-xl hover-lift border border-amber-100">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto gold-gradient rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <i class="fas fa-coins text-4xl text-white"></i>
+            </div>
+            <div class="absolute -top-2 -right-2 w-10 h-10 bg-green-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-sm"></i>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-green-900 amiri">Rezeki Mengalir Deras</h3>
+          <p class="mt-4 text-gray-700 leading-relaxed">Rahasia rezeki datang dari arah tak terduga dengan metode tawakal yang diajarkan Rasulullah</p>
+          <div class="mt-6 pt-6 border-t border-amber-200">
+            <div class="flex justify-center gap-2">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-b from-amber-50 to-white p-8 rounded-3xl shadow-xl hover-lift border border-amber-100">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto gold-gradient rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <i class="fas fa-heart text-4xl text-white"></i>
+            </div>
+            <div class="absolute -top-2 -right-2 w-10 h-10 bg-green-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-sm"></i>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-green-900 amiri">Hidup Penuh Keajaiban</h3>
+          <p class="mt-4 text-gray-700 leading-relaxed">Masalah jadi ringan, selalu ada jalan keluar, dan hidup terasa lebih bermakna setiap hari</p>
+          <div class="mt-6 pt-6 border-t border-amber-200">
+            <div class="flex justify-center gap-2">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 bg-green-50 p-6 rounded-2xl border border-green-200 max-w-3xl mx-auto">
+        <p class="text-green-900 font-bold text-lg flex items-center justify-center gap-3">
+          <i class="fas fa-award text-yellow-600"></i>
+          SETIAP PEMBELAS DAPAT BONUS SPESIAL: Ebook "99 Doa Pembuka Rezeki"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="py-16 green-gradient text-white section-padding">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl sm:text-5xl font-bold amiri mb-4 text-shadow">Apa Kata Pembaca?</h2>
+        <p class="text-amber-100 text-lg">Ribuan umat telah mengalami perubahan hidup setelah membaca buku ini</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl text-center hover-lift border border-white/20">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto bg-yellow-400/20 rounded-full flex items-center justify-center mb-6 border-4 border-yellow-300/30">
+              <i class="fas fa-female text-4xl text-yellow-300"></i>
+            </div>
+            <div class="absolute top-0 right-6 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-quote-left text-white text-sm"></i>
+            </div>
+          </div>
+          <p class="italic mb-6 text-lg leading-relaxed">"Baru 2 minggu amalkan, utang 150 juta lunas. Subhanallah! Rasanya seperti mimpi."</p>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+          </div>
+          <p class="font-bold text-xl">Ukhti Aisyah - Surabaya</p>
+          <p class="text-amber-100 text-sm mt-1">Pengusaha Fashion</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl text-center hover-lift border border-white/20">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto bg-yellow-400/20 rounded-full flex items-center justify-center mb-6 border-4 border-yellow-300/30">
+              <i class="fas fa-male text-4xl text-yellow-300"></i>
+            </div>
+            <div class="absolute top-0 right-6 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-quote-left text-white text-sm"></i>
+            </div>
+          </div>
+          <p class="italic mb-6 text-lg leading-relaxed">"Hati jadi tenang luar biasa. Setiap bab seperti diajak bicara Allah. Hidup terasa lebih ringan."</p>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+          </div>
+          <p class="font-bold text-xl">Akhi Muhammad - Bandung</p>
+          <p class="text-amber-100 text-sm mt-1">Pegawai Bank</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl text-center hover-lift border border-white/20">
+          <div class="relative">
+            <div class="w-24 h-24 mx-auto bg-yellow-400/20 rounded-full flex items-center justify-center mb-6 border-4 border-yellow-300/30">
+              <i class="fas fa-female text-4xl text-yellow-300"></i>
+            </div>
+            <div class="absolute top-0 right-6 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-quote-left text-white text-sm"></i>
+            </div>
+          </div>
+          <p class="italic mb-6 text-lg leading-relaxed">"Rezeki lancar, jodoh datang, kesehatan membaik… luar biasa! Buku ini sungguh berkah."</p>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+            <i class="fas fa-star text-yellow-300"></i>
+          </div>
+          <p class="font-bold text-xl">Ukhti Zahra - Malang</p>
+          <p class="text-amber-100 text-sm mt-1">Ibu Rumah Tangga</p>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-3 bg-white/20 px-6 py-3 rounded-full">
+          <i class="fas fa-users text-2xl"></i>
+          <p class="font-bold">Lebih dari 5.000+ buku telah terjual dalam 3 bulan terakhir!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO -->
+  <section id="beli" class="py-16 bg-gradient-to-b from-amber-50 to-amber-100 section-padding">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-8 border-yellow-500 relative overflow-hidden">
+        <!-- Stiker diskon -->
+        <div class="absolute -top-6 -right-6 gold-gradient w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-xl z-10">
+          <span class="text-white font-black text-2xl">30%</span>
+          <span class="text-white font-bold text-sm">DISKON</span>
+        </div>
+        
+        <div class="relative z-20">
+          <!-- Countdown timer utama -->
+          <div class="inline-flex flex-col items-center gap-2 bg-red-100 text-red-800 px-6 py-3 rounded-full font-bold mb-6">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-clock"></i>
+              <span>PROMO BERAKHIR DALAM:</span>
+            </div>
+            <div id="main-countdown" class="flex items-center justify-center gap-3 mt-2">
+              <div class="flex flex-col items-center">
+                <div id="hours" class="countdown-digit">23</div>
+                <div class="countdown-label">JAM</div>
+              </div>
+              <div class="text-red-800 text-2xl font-bold">:</div>
+              <div class="flex flex-col items-center">
+                <div id="minutes" class="countdown-digit">59</div>
+                <div class="countdown-label">MENIT</div>
+              </div>
+              <div class="text-red-800 text-2xl font-bold">:</div>
+              <div class="flex flex-col items-center">
+                <div id="seconds" class="countdown-digit">59</div>
+                <div class="countdown-label">DETIK</div>
+              </div>
+            </div>
+          </div>
+          
+          <p class="text-yellow-600 font-bold uppercase text-sm tracking-widest mb-2">PROMO SPESIAL HARI INI SAJA</p>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-green-900 amiri">Dapatkan Buku Ini</h2>
+          
+          <div class="my-8">
+            <div class="text-5xl sm:text-7xl font-black gold-gradient text-transparent bg-clip-text">Rp139.000</div>
+            <p class="text-2xl sm:text-3xl line-through text-gray-400 my-4">Rp199.000</p>
+          </div>
+          
+          <div class="bg-amber-50 p-6 rounded-2xl mb-8 border border-amber-200">
+            <p class="text-xl font-bold text-green-900 mb-4">
+              <i class="fas fa-gift text-yellow-600 mr-2"></i>
+              Diskon 30% + Bonus Ebook + Gratis Ongkir Seluruh Indonesia
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-book text-green-700"></i>
+                </div>
+                <span class="font-medium">Buku Fisik Premium</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-file-pdf text-yellow-700"></i>
+                </div>
+                <span class="font-medium">Ebook Bonus</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-shipping-fast text-blue-700"></i>
+                </div>
+                <span class="font-medium">Gratis Ongkir</span>
+              </div>
+            </div>
+          </div>
+          
+          <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Buku%20Momentum%20Keajaiban%20sekarang" 
+             class="block green-gradient hover:opacity-90 text-white font-black text-xl sm:text-2xl py-5 px-8 rounded-2xl shadow-2xl hover-lift mb-6">
+            <i class="fab fa-whatsapp mr-3"></i>
+            PESAN VIA WHATSAPP SEKARANG
+          </a>
+          
+          <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+            <p class="text-green-800 font-bold flex items-center justify-center gap-2">
+              <i class="fas fa-shield-alt text-green-700"></i>
+              GARANSI 100% UANG KEMBALI jika tidak merasakan perubahan dalam 30 hari
+            </p>
+          </div>
+          
+          <p class="mt-8 text-gray-600 text-sm">
+            <i class="fas fa-info-circle text-yellow-600 mr-1"></i>
+            Stok terbatas! Hanya <span id="remaining-stock" class="font-bold text-red-600">247</span> buku tersisa untuk promo hari ini
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="green-gradient text-white py-12 text-center section-padding">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+        <p class="amiri text-3xl mb-6 leading-relaxed">
+          "Dan barang siapa bertawakal kepada Allah, niscaya Allah akan mencukupkan (keperluan)nya."
+        </p>
+        <p class="text-yellow-300 text-xl font-bold mb-10">QS. At-Talaq: 3</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-book text-yellow-300"></i>
+            </div>
+            <div class="text-left">
+              <p class="font-bold">Momentum Keajaiban</p>
+              <p class="text-amber-100 text-sm">Buku Tawakal Terlaris</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-headset text-yellow-300"></i>
+            </div>
+            <div class="text-left">
+              <p class="font-bold">CS: 0812-3456-7890</p>
+              <p class="text-amber-100 text-sm">Senin-Minggu, 08:00-22:00 WIB</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-white/20 pt-8">
+          <p class="text-amber-100">© 2025 Momentum Keajaiban - Hak Cipta Dilindungi Undang-Undang</p>
+          <p class="text-sm opacity-80 mt-2">Desain dengan <i class="fas fa-heart text-red-400"></i> untuk umat Muslim Indonesia</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Buku%20Momentum%20Keajaiban%20sekarang" 
+     class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-40 hover-lift">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- JavaScript untuk Countdown Timer -->
+  <script>
+    // Set waktu akhir countdown (24 jam dari sekarang)
+    const countdownTime = 24 * 60 * 60; // 24 jam dalam detik
+    
+    // Waktu mulai countdown
+    let timeLeft = countdownTime;
+    
+    // Elemen countdown
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    const headerCountdownElement = document.getElementById('header-countdown');
+    const mainCountdownElement = document.getElementById('main-countdown');
+    const remainingStockElement = document.getElementById('remaining-stock');
+    
+    // Format angka menjadi 2 digit
+    function formatTime(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+    
+    // Update countdown
+    function updateCountdown() {
+      // Hitung jam, menit, detik
+      const hours = Math.floor(timeLeft / 3600);
+      const minutes = Math.floor((timeLeft % 3600) / 60);
+      const seconds = timeLeft % 60;
+      
+      // Update tampilan countdown utama
+      hoursElement.textContent = formatTime(hours);
+      minutesElement.textContent = formatTime(minutes);
+      secondsElement.textContent = formatTime(seconds);
+      
+      // Update countdown di header (format sederhana)
+      if (headerCountdownElement) {
+        headerCountdownElement.innerHTML = `
+          <div class="countdown-digit">${formatTime(hours)}</div><span class="text-amber-200">:</span>
+          <div class="countdown-digit">${formatTime(minutes)}</div><span class="text-amber-200">:</span>
+          <div class="countdown-digit">${formatTime(seconds)}</div>
+        `;
+      }
+      
+      // Kurangi waktu
+      timeLeft--;
+      
+      // Jika waktu habis
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        
+        // Update tampilan ketika waktu habis
+        hoursElement.textContent = '00';
+        minutesElement.textContent = '00';
+        secondsElement.textContent = '00';
+        
+        if (headerCountdownElement) {
+          headerCountdownElement.innerHTML = `
+            <div class="countdown-digit">00</div><span class="text-amber-200">:</span>
+            <div class="countdown-digit">00</div><span class="text-amber-200">:</span>
+            <div class="countdown-digit">00</div>
+          `;
+        }
+        
+        // Tambahkan kelas expired
+        mainCountdownElement.classList.add('countdown-expired');
+        
+        // Update teks promo berakhir
+        const promoText = document.querySelector('.inline-flex.flex-col.items-center.gap-2');
+        if (promoText) {
+          promoText.innerHTML = `
+            <div class="flex items-center gap-2">
+              <i class="fas fa-times-circle"></i>
+              <span>PROMO TELAH BERAKHIR!</span>
+            </div>
+          `;
+          promoText.classList.remove('bg-red-100', 'text-red-800');
+          promoText.classList.add('bg-gray-300', 'text-gray-800');
+        }
+        
+        // Kurangi stok menjadi 0
+        if (remainingStockElement) {
+          remainingStockElement.textContent = '0';
+          remainingStockElement.classList.add('line-through');
+        }
+        
+        // Tampilkan alert
+        alert('Promo telah berakhir! Silakan hubungi customer service untuk informasi lebih lanjut.');
+      }
+      
+      // Simulasi pengurangan stok secara acak (setiap 10 detik)
+      if (timeLeft % 10 === 0 && timeLeft > 0 && remainingStockElement) {
+        let currentStock = parseInt(remainingStockElement.textContent);
+        if (currentStock > 0) {
+          // Kurangi 1-3 buku setiap 10 detik
+          const reduction = Math.floor(Math.random() * 3) + 1;
+          currentStock = Math.max(0, currentStock - reduction);
+          remainingStockElement.textContent = currentStock;
+          
+          // Jika stok menipis (< 50), beri efek peringatan
+          if (currentStock < 50) {
+            remainingStockElement.classList.add('animate-pulse');
+          }
+        }
+      }
+    }
+    
+    // Jalankan countdown setiap detik
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    
+    // Inisialisasi countdown
+    updateCountdown();
+    
+    // Simpan waktu countdown di localStorage agar tetap sinkron jika halaman direfresh
+    if (localStorage.getItem('countdownStartTime')) {
+      const startTime = parseInt(localStorage.getItem('countdownStartTime'));
+      const currentTime = Math.floor(Date.now() / 1000);
+      const elapsedTime = currentTime - startTime;
+      timeLeft = Math.max(0, countdownTime - elapsedTime);
+    } else {
+      // Simpan waktu mulai di localStorage
+      localStorage.setItem('countdownStartTime', Math.floor(Date.now() / 1000));
+    }
+    
+    // Reset countdown jika sudah lebih dari 24 jam
+    window.addEventListener('beforeunload', function() {
+      const startTime = parseInt(localStorage.getItem('countdownStartTime'));
+      const currentTime = Math.floor(Date.now() / 1000);
+      
+      if (currentTime - startTime > countdownTime) {
+        localStorage.removeItem('countdownStartTime');
+      }
+    });
+  </script>
+
+</body>
+</html>
