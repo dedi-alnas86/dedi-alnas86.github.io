@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doa Mustajab di Tasyahud Akhir – Buku Terlaris 2025</title>
+  <meta name="description" content="Rahasia doa paling mustajab yang diajarkan Rasulullah ﷺ langsung di tasyahud akhir. Dibuktikan sahabat, ulama, dan 23.000+ umat masa kini."/>
+
+  <!-- Favicon Masjid Emas -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3131/3131643.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3131/3131643.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.css">
+  
+  <style>
+    body { 
+      font-family: 'Poppins', sans-serif; 
+    }
+    .font-amiri { 
+      font-family: 'Amiri', serif; 
+      letter-spacing: 0.5px;
+    }
+    .bg-grad-islam { 
+      background: linear-gradient(135deg, #0c2d4d 0%, #155e75 50%, #0d9488 100%); 
+    }
+    .bg-grad-gold {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    }
+    .bg-grad-emerald {
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    }
+    .card-hover { 
+      transition: all 0.4s ease; 
+    }
+    .card-hover:hover { 
+      transform: translateY(-12px); 
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+    }
+    .testimonial { 
+      background: linear-gradient(45deg, rgba(16,185,129,0.08), rgba(34,211,238,0.08)); 
+    }
+    .promo-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: #ef4444;
+      color: white;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+      z-index: 10;
+    }
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 30px;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .animate-float { 
+      animation: float 6s ease-in-out infinite; 
+    }
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
+      50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.8); }
+      100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
+    }
+    .pulse-button {
+      animation: pulse-glow 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #10b981, transparent);
+      margin: 40px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+    .price-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #1f2937;
+      padding: 6px 20px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+      margin: 10px 0;
+    }
+    .sticker {
+      position: absolute;
+      z-index: 5;
+    }
+    .mosque-svg-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      border: 8px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.1));
+    }
+    .svg-glow {
+      filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.3));
+    }
+    .pulse-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fbbf24;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.7; }
+    }
+    .floating-star {
+      position: absolute;
+      opacity: 0.7;
+      animation: floatStar 8s ease-in-out infinite;
+    }
+    @keyframes floatStar {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+    .islamic-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2310b981' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+  <!-- Sticker Dekoratif -->
+  <div class="sticker top-10 left-5 hidden lg:block">
+    <div class="floating-star">
+      <i class="fas fa-star text-yellow-400 text-4xl"></i>
+    </div>
+  </div>
+  <div class="sticker bottom-10 right-5 hidden lg:block">
+    <div class="floating-star" style="animation-delay: -4s;">
+      <i class="fas fa-moon text-emerald-400 text-4xl"></i>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-grad-islam text-white min-h-screen flex items-center relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 islamic-pattern opacity-10"></div>
+    
+    <!-- Shimmer effect -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent animate-shimmer" style="animation: shimmer 3s infinite;"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left order-2 lg:order-1">
+          <!-- Badge Promo -->
+          <div class="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-bold py-2 px-6 rounded-full mb-6 shadow-lg animate-pulse">
+            <i class="fas fa-fire mr-2"></i> TERLARIS 2025 - 23.847+ Terjual
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-amiri leading-tight mb-6 drop-shadow-lg">
+            DOA MUSTAJAB<br><span class="text-yellow-300">DI TASYAHUD AKHIR</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl mb-8 opacity-95 leading-relaxed">
+            "Doa di akhir setiap shalat adalah doa yang paling didengar oleh Allah…"  
+            <span class="block mt-4 text-yellow-300 text-lg font-medium">— Hadits Shahih (HR. Tirmidzi)</span>
+          </p>
+          
+          <!-- Harga Promo -->
+          <div class="mb-8">
+            <div class="text-3xl md:text-4xl font-bold">
+              <span class="text-gray-300 line-through mr-4">Rp 199.000</span>
+              <span class="price-tag">Rp 129.000</span>
+            </div>
+            <p class="text-yellow-300 font-medium mt-2">
+              <i class="fas fa-gift mr-2"></i> Bonus eBook senilai Rp 79.000 untuk 500 pemesan pertama!
+            </p>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#pesan" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-bold text-lg md:text-xl py-4 px-8 rounded-xl shadow-2xl transform hover:scale-105 transition duration-300 pulse-button">
+              <i class="fas fa-shopping-cart mr-2"></i> PESAN SEKARANG
+            </a>
+            <a href="#testimoni" class="border-2 border-white hover:bg-white hover:text-emerald-800 font-bold text-lg md:text-xl py-4 px-8 rounded-xl transition duration-300">
+              <i class="fas fa-star mr-2"></i> 127+ Testimoni
+            </a>
+          </div>
+          
+          <p class="mt-8 text-lg">
+            <i class="fas fa-users text-yellow-300 mr-2"></i> Sudah diamalkan oleh <span class="text-yellow-300 font-bold">23.847+</span> muslim Indonesia
+          </p>
+        </div>
+
+        <!-- SVG MASJID UTAMA (SVG #1) -->
+        <div class="flex justify-center order-1 lg:order-2 mb-10 lg:mb-0">
+          <div class="relative">
+            <div class="promo-badge">
+              <i class="fas fa-crown mr-1"></i> BEST SELLER
+            </div>
+            
+            <div class="mosque-svg-container animate-float max-w-md lg:max-w-lg p-4 lg:p-6">
+              <!-- Titik-titik cahaya -->
+              <div class="pulse-dot" style="top: 20%; left: 30%;"></div>
+              <div class="pulse-dot" style="top: 40%; right: 25%; animation-delay: 0.5s;"></div>
+              <div class="pulse-dot" style="bottom: 30%; left: 40%; animation-delay: 1s;"></div>
+              
+              <!-- SVG Masjid Elegan (SVG #1) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" class="w-full h-auto svg-glow">
+                <defs>
+                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fbbf24" />
+                    <stop offset="50%" stop-color="#f59e0b" />
+                    <stop offset="100%" stop-color="#d97706" />
+                  </linearGradient>
+                  <linearGradient id="emeraldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981" />
+                    <stop offset="100%" stop-color="#047857" />
+                  </linearGradient>
+                </defs>
+                
+                <!-- Langit malam -->
+                <rect width="500" height="400" fill="#0c2d4d" />
+                
+                <!-- Bintang-bintang -->
+                <g fill="#fbbf24" opacity="0.8">
+                  <circle cx="50" cy="80" r="1.5" />
+                  <circle cx="120" cy="60" r="1" />
+                  <circle cx="200" cy="90" r="1.2" />
+                  <circle cx="280" cy="70" r="1" />
+                  <circle cx="350" cy="85" r="1.5" />
+                  <circle cx="420" cy="65" r="1.2" />
+                  <circle cx="450" cy="95" r="1" />
+                </g>
+                
+                <!-- Tanah -->
+                <path d="M0,300 Q125,280 250,300 T500,300 L500,400 L0,400 Z" fill="#155e75" />
+                
+                <!-- Kubah utama -->
+                <ellipse cx="250" cy="150" rx="80" ry="40" fill="url(#goldGradient)" />
+                <ellipse cx="250" cy="150" rx="75" ry="35" fill="#0d9488" />
+                
+                <!-- Menara kiri -->
+                <rect x="130" y="100" width="20" height="120" fill="url(#goldGradient)" />
+                <rect x="135" y="95" width="10" height="10" fill="url(#goldGradient)" />
+                <circle cx="140" cy="110" r="8" fill="#fbbf24" />
+                
+                <!-- Menara kanan -->
+                <rect x="350" y="100" width="20" height="120" fill="url(#goldGradient)" />
+                <rect x="355" y="95" width="10" height="10" fill="url(#goldGradient)" />
+                <circle cx="360" cy="110" r="8" fill="#fbbf24" />
+                
+                <!-- Pintu utama -->
+                <rect x="210" y="180" width="80" height="100" fill="url(#emeraldGradient)" />
+                <path d="M250,180 Q290,200 290,230 Q290,260 250,280 Q210,260 210,230 Q210,200 250,180" fill="url(#goldGradient)" />
+                
+                <!-- Jendela -->
+                <rect x="180" y="220" width="20" height="30" fill="#fbbf24" rx="3" />
+                <rect x="300" y="220" width="20" height="30" fill="#fbbf24" rx="3" />
+                
+                <!-- Kaligrafi -->
+                <text x="250" y="160" text-anchor="middle" fill="#ffffff" font-family="Amiri" font-size="24" font-weight="bold">
+                  ﷺ
+                </text>
+              </svg>
+              
+              <!-- Overlay teks -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 lg:p-4 rounded-b-xl">
+                <p class="font-amiri text-base lg:text-lg text-yellow-300">Tempat Ibadah, Sumber Keberkahan</p>
+                <p class="text-xs lg:text-sm text-white/80">Masjid - Rumah Allah yang penuh rahmat</p>
+              </div>
+            </div>
+            
+            <!-- Ikon dekoratif -->
+            <div class="absolute -bottom-4 -left-4 w-12 lg:w-16 h-12 lg:h-16 bg-yellow-400/20 rounded-full hidden lg:block"></div>
+            <div class="absolute -top-4 -right-4 w-8 lg:w-12 h-8 lg:h-12 bg-emerald-400/20 rounded-full hidden lg:block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Keajaiban yang Menanti Anda -->
+  <section class="py-16 lg:py-20 bg-gradient-to-b from-emerald-50 to-white relative">
+    <div class="absolute inset-0 islamic-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+      <!-- Header dengan ikon masjid (SVG #4) -->
+      <div class="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 lg:w-10 h-8 lg:h-10 text-emerald-600">
+          <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+          <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-800 font-amiri mb-4">
+        Satu Doa di Tasyahud Akhir
+      </h2>
+      <p class="text-xl text-emerald-600 mb-12 max-w-3xl mx-auto">Bisa mengubah seluruh hidup Anda dengan izin Allah</p>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white p-6 lg:p-8 rounded-2xl shadow-xl card-hover border-t-4 border-emerald-500 relative">
+          <div class="feature-icon bg-gradient-to-br from-emerald-100 to-emerald-200 text-emerald-600">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-4 text-emerald-800">Dilindungi dari Fitnah Dajjal & Fitnah Hidup-Mati</h3>
+          <p class="text-gray-600">Doa yang langsung diajarkan Rasulullah ﷺ, terbukti menjaga sahabat dari bencana besar</p>
+          <div class="mt-4">
+            <i class="fas fa-check-circle text-emerald-500"></i>
+            <span class="text-sm text-emerald-700 ml-2">Berdalil Shahih</span>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 lg:p-8 rounded-2xl shadow-xl card-hover border-t-4 border-yellow-500 relative">
+          <div class="feature-icon bg-gradient-to-br from-yellow-100 to-yellow-200 text-yellow-600">
+            <i class="fas fa-hands-praying"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-4 text-emerald-800">Doa Paling Didengar Allah</h3>
+          <p class="text-gray-600">Hadits shahih: "Doa di akhir setiap shalat" adalah waktu paling mustajab setelah tahajjud</p>
+          <div class="mt-4">
+            <i class="fas fa-check-circle text-emerald-500"></i>
+            <span class="text-sm text-emerald-700 ml-2">HR. Tirmidzi</span>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 lg:p-8 rounded-2xl shadow-xl card-hover border-t-4 border-red-500 relative">
+          <div class="feature-icon bg-gradient-to-br from-red-100 to-red-200 text-red-600">
+            <i class="fas fa-heart-circle-check"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-4 text-emerald-800">Hati Tenang, Rezeki Mengalir, Hajat Terpenuhi</h3>
+          <p class="text-gray-600">Ribuan testimoni: jodoh, kesembuhan, keluar dari hutang, lolos CPNS/UI/PTN</p>
+          <div class="mt-4">
+            <i class="fas fa-check-circle text-emerald-500"></i>
+            <span class="text-sm text-emerald-700 ml-2">127+ Testimoni Nyata</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SVG Masjid Silhouette (SVG #3) -->
+      <div class="mt-16 max-w-2xl lg:max-w-4xl mx-auto">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r from-emerald-50 to-yellow-50 p-6">
+          <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="text-left flex-1">
+              <h3 class="text-2xl font-bold text-emerald-800 font-amiri mb-4">Momen Emas Berdoa</h3>
+              <p class="text-gray-700 mb-4">Tasyahud akhir adalah waktu dimana langit terbuka dan doa lebih mudah dikabulkan.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                  <span>Waktu terbaik setelah tahajjud</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                  <span>Doa lebih dekat dengan Allah</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                  <span>Diajarkan langsung oleh Rasulullah ﷺ</span>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" class="w-full h-auto">
+                <!-- SVG Masjid Silhouette -->
+                <path d="M50,60 Q150,30 250,60 L250,90 L50,90 Z" fill="#fbbf24" opacity="0.3" />
+                <ellipse cx="150" cy="50" rx="20" ry="10" fill="#fbbf24" opacity="0.5" />
+                <rect x="120" cy="65" width="60" height="40" fill="#10b981" opacity="0.3" rx="5" transform="translate(0, 10)" />
+                <!-- Cahaya -->
+                <radialGradient id="light" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+                </radialGradient>
+                <circle cx="150" cy="50" r="40" fill="url(#light)" opacity="0.3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Testimoni Singkat -->
+  <section id="testimoni" class="py-16 lg:py-20 bg-white relative">
+    <div class="absolute inset-0 islamic-pattern opacity-3"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 mb-4">
+          <i class="fas fa-comments text-emerald-600 text-2xl"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-800 font-amiri mb-4">
+          Mereka Sudah Merasakan<br>Keajaiban Doa Ini…
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ribuan muslim Indonesia telah membuktikan kemustajaban doa di tasyahud akhir
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="testimonial p-6 lg:p-8 rounded-2xl shadow-lg border-l-4 border-emerald-500 relative">
+          <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="italic text-lg mb-6 pt-4">"Anak saya hilang 7 jam. Saya nangis di setiap tasyahud akhir. Maghrib anak saya ditemukan selamat di masjid. Subhanallah."</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <div>
+              <p class="font-bold text-emerald-700">Mbak Lina</p>
+              <p class="text-sm text-gray-500">Surabaya</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial p-6 lg:p-8 rounded-2xl shadow-lg border-l-4 border-yellow-500 relative">
+          <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-white">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="italic text-lg mb-6 pt-4">"Penyumbatan jantung 90%. Dokter bilang harus pasang ring 200 juta. 3 bulan berdoa di tasyahud akhir, kontrol lagi: sumbatan HILANG SENDIRI."</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <div>
+              <p class="font-bold text-emerald-700">Pak H. Ismail (65 th)</p>
+              <p class="text-sm text-gray-500">Bandung</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial p-6 lg:p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 relative">
+          <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="italic text-lg mb-6 pt-4">"Lolos UI Kedokteran ranking 34 nasional tanpa bimbel. Hanya belajar sendiri + doa di tasyahud akhir setiap shalat."</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+              <p class="font-bold text-emerald-700">Nabila</p>
+              <p class="text-sm text-gray-500">Siswi SMA Jakarta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#semua-testimoni" class="inline-flex items-center text-emerald-600 hover:text-emerald-800 font-bold text-lg">
+          <span>Lihat 127+ testimoni lengkap</span>
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Isi Buku -->
+  <section class="py-16 lg:py-20 bg-grad-islam text-white relative">
+    <div class="absolute inset-0 islamic-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+      <div class="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 rounded-full bg-gradient-to-br from-white/20 to-white/10 mb-4">
+        <i class="fas fa-gift text-yellow-300 text-2xl lg:text-3xl"></i>
+      </div>
+      
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-amiri mb-4">
+        Apa yang Anda Dapatkan?
+      </h2>
+      <p class="text-xl opacity-90 mb-12 max-w-3xl mx-auto">Buku lengkap dengan konten premium yang akan membimbing doa Anda</p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 card-hover border border-white/20">
+          <div class="feature-icon bg-gradient-to-br from-white/20 to-white/10 text-white mb-4">
+            <i class="fas fa-book-quran"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Doa Arab + Latin + Terjemah</h3>
+          <p class="opacity-90">Setiap doa ditulis lengkap dengan harakat untuk memudahkan pembacaan</p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 card-hover border border-white/20">
+          <div class="feature-icon bg-gradient-to-br from-white/20 to-white/10 text-white mb-4">
+            <i class="fas fa-star-and-crescent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Dalil Shahih Bukhari-Muslim</h3>
+          <p class="opacity-90">100% sesuai sunnah Rasulullah ﷺ dengan referensi yang dapat dipercaya</p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 card-hover border border-white/20">
+          <div class="feature-icon bg-gradient-to-br from-white/20 to-white/10 text-white mb-4">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Kisah Sahabat & Ulama</h3>
+          <p class="opacity-90">Inspirasi dari Sa'ad bin Abi Waqqash, Ibnu Taimiyah, dan ulama lainnya</p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 card-hover border border-white/20">
+          <div class="feature-icon bg-gradient-to-br from-white/20 to-white/10 text-white mb-4">
+            <i class="fas fa-heart-circle-check"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">127+ Testimoni Nyata</h3>
+          <p class="opacity-90">Kisah nyata umat masa kini yang doanya terkabul dengan izin Allah</p>
+        </div>
+      </div>
+      
+      <!-- SVG Masjid kecil sebagai separator (SVG #2) -->
+      <div class="mt-16 max-w-md mx-auto opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" class="w-full h-16">
+          <!-- Simple Mosque SVG -->
+          <path d="M40,40 Q100,20 160,40 L160,60 L40,60 Z" fill="#fbbf24" opacity="0.4" />
+          <ellipse cx="100" cy="35" rx="25" ry="12" fill="#fbbf24" opacity="0.6" />
+          <rect x="80" cy="45" width="40" height="30" fill="#10b981" opacity="0.4" rx="3" transform="translate(0, 5)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Terakhir -->
+  <section id="pesan" class="py-16 lg:py-20 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 relative overflow-hidden">
+    <!-- Dekorasi SVG di background -->
+    <div class="absolute top-0 left-0 w-64 h-64 opacity-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <path d="M100,20 Q180,40 180,100 Q180,160 100,180 Q20,160 20,100 Q20,40 100,20" fill="#ffffff" />
+      </svg>
+    </div>
+    
+    <div class="absolute bottom-0 right-0 w-48 h-48 opacity-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="#ffffff" />
+      </svg>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Ikon masjid di header (SVG #4) -->
+        <div class="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 rounded-full bg-white/30 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 lg:w-10 h-8 lg:h-10 text-gray-900">
+            <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+            <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-amiri mb-6">
+          JANGAN LEWATKAN WAKTU MUSTAJAB INI LAGI!
+        </h2>
+        
+        <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 mb-8">
+          <p class="text-2xl md:text-3xl text-gray-900 mb-4">
+            Harga Normal <span class="line-through text-gray-700">Rp 199.000</span>
+          </p>
+          
+          <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+            <div class="price-tag text-3xl md:text-4xl">
+              Rp 129.000
+            </div>
+            <div class="bg-red-600 text-white font-bold py-2 px-6 rounded-full text-lg animate-pulse">
+              DISKON 35%
+            </div>
+          </div>
+          
+          <p class="text-gray-900 font-semibold text-lg">
+            <i class="fas fa-clock mr-2"></i> Promo berlaku hingga 31 Desember 2025
+          </p>
+        </div>
+        
+        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20buku%20Doa%20Mustajab%20di%20Tasyahud%20Akhir" 
+           class="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold text-xl md:text-2xl py-5 px-10 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-300 mb-6 w-full max-w-md mx-auto pulse-button">
+          <i class="fab fa-whatsapp text-3xl md:text-4xl mr-4"></i>
+          <div class="text-left">
+            <div class="text-lg">PESAN SEKARANG VIA WHATSAPP</div>
+            <div class="text-sm font-normal">Stok Terbatas - Kirim ke Seluruh Indonesia</div>
+          </div>
+        </a>
+        
+        <div class="bg-white/30 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            <i class="fas fa-gift text-red-500 mr-2"></i> BONUS SPESIAL
+          </h3>
+          <p class="text-gray-900 text-lg mb-2">
+            e-Book "33 Doa Paling Mustajab dari Al-Qur'an & Sunnah"
+          </p>
+          <p class="text-gray-800 font-medium">
+            <i class="fas fa-tag mr-2"></i> Senilai Rp 79.000 - GRATIS untuk 500 pemesan pertama!
+          </p>
+        </div>
+        
+        <div class="mt-8 flex flex-wrap justify-center gap-4 text-gray-900">
+          <div class="flex items-center">
+            <i class="fas fa-shield-check text-emerald-700 mr-2"></i>
+            <span>Garansi 100% Uang Kembali</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-shipping-fast text-emerald-700 mr-2"></i>
+            <span>Gratis Ongkir Jawa-Bali</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-lock text-emerald-700 mr-2"></i>
+            <span>Transaksi Aman</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 relative">
+    <!-- SVG pattern background -->
+    <div class="absolute inset-0 islamic-pattern opacity-3"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+      <!-- SVG Masjid kecil di footer (SVG #2) -->
+      <div class="mb-8 inline-block opacity-70">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" class="w-24 lg:w-32 h-12 lg:h-16">
+          <path d="M40,40 Q100,20 160,40 L160,60 L40,60 Z" fill="#10b981" />
+          <ellipse cx="100" cy="35" rx="25" ry="12" fill="#f59e0b" />
+          <rect x="80" cy="45" width="40" height="30" fill="#0d9488" rx="3" transform="translate(0, 5)" />
+        </svg>
+      </div>
+      
+      <div class="mb-8">
+        <p class="text-2xl font-amiri mb-2">Doa Mustajab di Tasyahud Akhir</p>
+        <p class="opacity-80 max-w-md mx-auto">Menebar kebaikan satu doa demi satu doa untuk kehidupan yang lebih berkah</p>
+      </div>
+      
+      <p class="mb-6 opacity-80">&copy; 2025 Pustaka Sunnah Digital. All rights reserved.</p>
+      
+      <div class="flex justify-center gap-6 mb-8">
+        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center text-xl transition duration-300 hover:scale-110">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center text-xl transition duration-300 hover:scale-110">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center text-xl transition duration-300 hover:scale-110">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center text-xl transition duration-300 hover:scale-110">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      
+      <div class="text-sm opacity-70 max-w-lg mx-auto">
+        <p>Buku ini disusun berdasarkan dalil-dalil shahih dari Al-Qur'an dan Sunnah. Hasil dan manfaat yang diperoleh dapat bervariasi bagi setiap individu.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animasi untuk elemen saat scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animasi float untuk container masjid
+      const floatElement = document.querySelector('.animate-float');
+      if (floatElement) {
+        floatElement.style.animation = 'float 6s ease-in-out infinite';
+      }
+      
+      // Efek hover untuk semua card
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transition = 'all 0.4s ease';
+        });
+      });
+      
+      // Smooth scroll untuk link anchor
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Animasi untuk titik-titik cahaya
+      const dots = document.querySelectorAll('.pulse-dot');
+      dots.forEach((dot, index) => {
+        dot.style.animationDelay = `${index * 0.5}s`;
+      });
+      
+      // Animasi untuk bintang berjalan
+      const stars = document.querySelectorAll('.floating-star');
+      stars.forEach((star, index) => {
+        star.style.animationDelay = `${index * 2}s`;
+      });
+    });
+  </script>
+</body>
+</html>
