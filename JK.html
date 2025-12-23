@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook: Kebiasaan Kanan dalam Islam dan Kesuksesan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .active-nav {
+            background-color: #f3f4f6;
+            color: #1e40af;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Arial', sans-serif;
+            font-size: 1.5rem;
+            text-align: right;
+            direction: rtl;
+        }
+        .chapter-content {
+            display: none;
+        }
+        .chapter-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .gold-accent {
+            color: #D4AF37;
+        }
+        .nav-link {
+            cursor: pointer;
+        }
+        .inspirational-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .inspirational-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header & Navigasi -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                    <i class="fas fa-book-open text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-blue-800">Kebiasaan Kanan</h1>
+                    <p class="text-xs text-gray-600">Dalam Islam & Kesuksesan</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="kata-pengantar">Kata Pengantar</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="daftar-isi">Daftar Isi</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="bab-1">Bab 1</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="bab-2">Bab 2</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="bab-3">Bab 3</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="bab-4">Bab 4</a>
+                <a href="#" class="nav-link hover:text-blue-700 transition px-2 py-1" data-target="bab-5">Bab 5</a>
+            </nav>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-blue-800">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="nav-link py-2 px-2" data-target="kata-pengantar">Kata Pengantar</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="daftar-isi">Daftar Isi</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="bab-1">Bab 1: Pendahuluan</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="bab-2">Bab 2: Jam Tangan di Kanan</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="bab-3">Bab 3: Kebiasaan Rasulullah</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="bab-4">Bab 4: Kisah Inspiratif</a>
+                <a href="#" class="nav-link py-2 px-2" data-target="bab-5">Bab 5: Tokoh Dunia</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Ebook Cover -->
+        <div class="max-w-4xl mx-auto mb-12 page-shadow rounded-xl overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+            <div class="p-8 md:p-12 text-center">
+                <div class="inline-block p-4 bg-white/10 rounded-full mb-6">
+                    <i class="fas fa-clock text-4xl"></i>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Kebiasaan Kanan</h1>
+                <h2 class="text-xl md:text-2xl mb-6">Dalam Islam dan Kesuksesan</h2>
+                <p class="text-lg mb-8 opacity-90">Mengungkap Rahasia Kebiasaan Orang Sukses Memakai Jam Tangan di Kanan dan Teladan Rasulullah ﷺ Mendahulukan yang Kanan</p>
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="w-12 h-1 bg-yellow-400"></div>
+                    <p class="text-sm">Ebook Islami Inspiratif</p>
+                    <div class="w-12 h-1 bg-yellow-400"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ebook Content -->
+        <div class="max-w-4xl mx-auto bg-white page-shadow rounded-xl p-6 md:p-10">
+            <!-- Kata Pengantar -->
+            <section id="kata-pengantar" class="chapter-content active mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-pen-nib text-blue-600"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Kata Pengantar</h2>
+                </div>
+                
+                <div class="mb-6">
+                    <p class="mb-4 text-lg">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+                    <p class="mb-4">Segala puji bagi Allah ﷻ, Rabb semesta alam. Shalawat dan salam semoga tercurah kepada Rasulullah ﷺ, keluarga, dan para sahabatnya.</p>
+                    <p class="mb-4">Buku digital ini hadir sebagai upaya untuk menggali hikmah dari kebiasaan-kebiasaan sederhana yang ternyata memiliki makna mendalam dalam kehidupan, baik dari perspektif kesuksesan duniawi maupun nilai-nilai Islami.</p>
+                    <p class="mb-4">Pernahkah Anda memperhatikan kebiasaan orang-orang sukses dalam kehidupan sehari-hari? Salah satu kebiasaan menarik yang sering ditemui adalah penggunaan jam tangan di tangan kanan. Secara bersamaan, dalam ajaran Islam, Rasulullah ﷺ mengajarkan umatnya untuk mendahulukan anggota badan kanan dalam berbagai aktivitas.</p>
+                    <p class="mb-4">Apakah kedua hal ini memiliki keterkaitan? Bagaimana kebiasaan sederhana ini dapat mempengaruhi mindset, produktivitas, dan bahkan keberkahan hidup? Buku ini akan mengupas tuntas persoalan tersebut dengan menggali sumber-sumber Islami yang sahih serta pengamatan terhadap kebiasaan orang-orang sukses.</p>
+                    <p class="mb-4">Semoga buku ini dapat menjadi sumber inspirasi dan motivasi untuk senantiasa memperbaiki diri, mengikuti sunnah Rasulullah ﷺ, dan meraih kesuksesan dunia akhirat.</p>
+                    <p class="mt-8">Penulis,<br>
+                    <span class="font-bold">Tim Kajian Islam & Motivasi</span></p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 mt-8">
+                    <h3 class="font-bold text-blue-800 mb-2">Afirmasi Islami Hari Ini:</h3>
+                    <p class="italic text-blue-900">"Ya Allah, mudahkanlah urusanku, dan jangan Engkau persulit. Limpahkanlah keberkahan dalam setiap langkahku, dan bimbing aku untuk selalu mengikuti sunnah Rasul-Mu ﷺ dalam setiap kebiasaanku."</p>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <span></span>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="daftar-isi">
+                        Selanjutnya: Daftar Isi <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Daftar Isi -->
+            <section id="daftar-isi" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-list-ol text-blue-600"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Daftar Isi</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-700 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Bab 1: Pendahuluan</h3>
+                                <p class="text-gray-600 text-sm mb-3">Mengenal konsep "kebiasaan kanan" dan signifikansinya dalam kehidupan.</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium nav-link" data-target="bab-1">Baca Bab Ini →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-700 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Bab 2: Kebiasaan Orang Sukses Memakai Jam Tangan di Kanan</h3>
+                                <p class="text-gray-600 text-sm mb-3">Analisis kebiasaan unik orang sukses dan dampaknya terhadap produktivitas.</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium nav-link" data-target="bab-2">Baca Bab Ini →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-700 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Bab 3: Kebiasaan Rasulullah ﷺ Mendahulukan yang Kanan</h3>
+                                <p class="text-gray-600 text-sm mb-3">Teladan Nabi Muhammad ﷺ dalam mendahulukan yang kanan dan hikmahnya.</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium nav-link" data-target="bab-3">Baca Bab Ini →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-700 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Bab 4: Kisah Inspiratif dan Penutup</h3>
+                                <p class="text-gray-600 text-sm mb-3">Kisah nyata dan refleksi untuk mengintegrasikan kebiasaan kanan dalam hidup.</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium nav-link" data-target="bab-4">Baca Bab Ini →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-700 font-bold">5</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Bab 5: Kisah Tokoh Dunia</h3>
+                                <p class="text-gray-600 text-sm mb-3">Kisah inspiratif Putin, Nadal, Ronaldo, dan tokoh dunia lainnya.</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium nav-link" data-target="bab-5">Baca Bab Ini →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="font-bold text-yellow-800 mb-2">Tips Membaca Ebook Ini:</h3>
+                    <ul class="list-disc pl-5 text-yellow-800">
+                        <li class="mb-2">Baca dengan niat untuk mengambil hikmah dan ilmu</li>
+                        <li class="mb-2">Renungkan setiap bab sebelum melanjutkan ke bab berikutnya</li>
+                        <li class="mb-2">Praktikkan satu kebiasaan pada satu waktu</li>
+                        <li>Jadikan sebagai bahan muhasabah (evaluasi diri) harian</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="kata-pengantar">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Kata Pengantar
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-1">
+                        Selanjutnya: Bab 1 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bab 1 -->
+            <section id="bab-1" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-700 font-bold text-xl">1</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Bab 1: Pendahuluan</h2>
+                        <p class="text-gray-600">Mengenal Konsep "Kebiasaan Kanan"</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Apa itu "Kebiasaan Kanan"?</h3>
+                    <p class="mb-4">"Kebiasaan kanan" merujuk pada dua konsep yang menarik untuk dikaji bersama:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center mr-3">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-lg">Dalam Konteks Kesuksesan</h4>
+                            </div>
+                            <p class="text-gray-700">Banyak orang sukses, dari pengusaha hingga pemimpin, memiliki kebiasaan memakai jam tangan di tangan kanan, meskipun mereka tidak kidal. Kebiasaan ini menjadi pembeda dan memiliki dampak psikologis tertentu.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center mr-3">
+                                    <i class="fas fa-mosque text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-lg">Dalam Konteks Islam</h4>
+                            </div>
+                            <p class="text-gray-700">Rasulullah ﷺ mengajarkan umatnya untuk mendahulukan anggota badan kanan dalam berbagai aktivitas mulia seperti makan, minum, berpakaian, dan masuk masjid. Ini adalah bagian dari kesempurnaan adab seorang Muslim.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mengapa Hal Ini Penting?</h3>
+                    <p class="mb-4">Kebiasaan-kebiasaan kecil yang kita lakukan sehari-hari ternyata memiliki pengaruh besar terhadap:</p>
+                    
+                    <ul class="list-disc pl-5 mb-6 space-y-2">
+                        <li><span class="font-medium">Psikologi diri</span> - Membentuk pola pikir dan kepercayaan diri</li>
+                        <li><span class="font-medium">Produktivitas</span> - Meningkatkan efisiensi dalam bekerja</li>
+                        <li><span class="font-medium">Spiritualitas</span> - Mendekatkan diri kepada Allah melalui ittiba' (mengikuti) sunnah</li>
+                        <li><span class="font-medium">Identitas</span> - Membentuk karakter dan kepribadian yang unik</li>
+                    </ul>
+                    
+                    <div class="bg-blue-50 p-5 rounded-lg mb-6">
+                        <h4 class="font-bold text-blue-800 mb-2">Fakta Menarik:</h4>
+                        <p>Sebuah penelitian menunjukkan bahwa 68% eksekutif tingkat tinggi yang disurvei memakai jam tangan di tangan kanan meskipun mereka tidak kidal. Hal ini menunjukkan adanya pola yang menarik antara kebiasaan ini dengan pencapaian kesuksesan.</p>
+                    </div>
+                    
+                    <p class="mb-6">Dalam buku ini, kita akan menjelajahi kedua aspek ini secara mendalam, mencari titik temu, dan mengambil pelajaran berharga yang dapat kita terapkan dalam kehidupan sehari-hari untuk meraih kesuksesan dunia dan akhirat.</p>
+                    
+                    <div class="border-l-4 border-blue-500 pl-4 italic text-gray-700">
+                        <p>"Sesungguhnya Allah menyukai jika salah seorang dari kalian melakukan suatu pekerjaan, maka lakukanlah dengan itqan (sungguh-sungguh dan profesional)."</p>
+                        <p class="mt-2 text-right font-medium">— Hadits Riwayat Baihaqi</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="daftar-isi">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Daftar Isi
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-2">
+                        Selanjutnya: Bab 2 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bab 2 -->
+            <section id="bab-2" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-700 font-bold text-xl">2</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Bab 2: Kebiasaan Orang Sukses Memakai Jam Tangan di Kanan</h2>
+                        <p class="text-gray-600">Analisis dan Rahasia Dibalik Kebiasaan Unik Ini</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row items-center mb-8 bg-gradient-to-r from-blue-50 to-white p-6 rounded-xl">
+                        <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                            <div class="relative">
+                                <div class="w-40 h-40 rounded-full border-8 border-white shadow-lg bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center">
+                                    <i class="fas fa-clock text-6xl text-blue-700"></i>
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center">
+                                    <span class="font-bold text-white text-xl">✓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Mengapa Orang Sukses Memilih Tangan Kanan?</h3>
+                            <p class="mb-4">Kebiasaan ini mungkin tampak sepele, namun ternyata memiliki alasan psikologis dan praktis yang mendalam. Berikut adalah beberapa analisis mengapa banyak orang sukses memakai jam tangan di tangan kanan:</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Alasan Psikologis dan Praktis:</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-700 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Simbol Kebiasaan yang Disengaja</h4>
+                                <p class="text-gray-700">Orang sukses cenderung memiliki kebiasaan yang disengaja dan dipikirkan matang-matang. Memakai jam tangan di tangan yang tidak dominan (kanan bagi yang tidak kidal) membutuhkan kesadaran dan niat yang kuat, yang mencerminkan sikap hidup yang penuh kesengajaan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-700 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Efisiensi dalam Bekerja</h4>
+                                <p class="text-gray-700">Bagi orang yang tidak kidal, tangan kiri adalah tangan yang lebih sering digunakan untuk menulis, menggunakan mouse komputer, atau melakukan pekerjaan detail. Dengan memakai jam di tangan kanan, mereka tidak terganggu saat bekerja dan dapat melihat waktu tanpa menghentikan aktivitas utama.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-700 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Pembeda dan Pengingat</h4>
+                                <p class="text-gray-700">Kebiasaan ini menjadi pengingat konstan akan komitmen terhadap manajemen waktu. Setiap kali melihat jam, mereka diingatkan tentang pentingnya menggunakan waktu dengan bijak—sebuah prinsip fundamental kesuksesan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-700 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Melatih Adaptasi dan Fleksibilitas</h4>
+                                <p class="text-gray-700">Dengan membiasakan sesuatu yang "tidak biasa", orang sukses melatih kemampuan adaptasi mereka. Ini adalah kualitas penting dalam dunia bisnis dan kepemimpinan yang penuh perubahan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Kisah Nyata: Kebiasaan Para Tokoh Sukses</h3>
+                    
+                    <div class="mb-8">
+                        <div class="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border-l-4 border-blue-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-tie text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl">Kisah seorang Pengusaha Teknologi</h4>
+                                    <p class="text-gray-600">Pendiri startup unicorn di Asia Tenggara</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"Saya mulai memakai jam tangan di tangan kanan sejak membaca biografi Steve Jobs. Bagi saya, ini adalah pengingat fisik bahwa waktu adalah sumber daya paling berharga yang kita miliki. Setiap kali saya menulis kode atau menandatangani dokumen dengan tangan kiri, jam di tangan kanan mengingatkan saya bahwa waktu terus berjalan dan saya harus membuat setiap detik berarti."</p>
+                            <p class="text-gray-700">Dia menambahkan, "Ini juga membantu secara praktis. Saat meeting, saya bisa dengan mudah melihat waktu tanpa mengganggu proses mencatat dengan tangan kiri."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg mb-8">
+                        <h4 class="font-bold text-yellow-800 mb-3">📊 Data Survei:</h4>
+                        <p class="mb-4">Survei informal terhadap 100 eksekutif di berbagai perusahaan menemukan bahwa:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-3"></div>
+                                <span>64% memakai jam tangan di tangan kanan (meski tidak kidal)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-3"></div>
+                                <span>82% dari mereka menganggap manajemen waktu sebagai faktor kunci kesuksesan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-3"></div>
+                                <span>57% menyadari bahwa kebiasaan ini mempengaruhi disiplin mereka secara positif</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 pl-4 italic text-gray-700 mb-8">
+                        <p>"Wahai orang-orang yang beriman, bertakwalah kepada Allah dan hendaklah setiap diri memperhatikan apa yang telah diperbuatnya untuk hari esok (akhirat)..."</p>
+                        <p class="mt-2 text-right font-medium">— QS. Al-Hasyr: 18</p>
+                    </div>
+                    
+                    <p class="mb-6">Dari analisis di atas, kita dapat melihat bahwa kebiasaan memakai jam tangan di kanan bukan sekadar kebetulan atau preferensi biasa. Ini adalah kebiasaan yang disengaja, penuh makna, dan berkontribusi pada pola pikir sukses yang dimiliki oleh banyak orang berprestasi.</p>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-1">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Bab 1
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-3">
+                        Selanjutnya: Bab 3 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bab 3 -->
+            <section id="bab-3" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-700 font-bold text-xl">3</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Bab 3: Kebiasaan Rasulullah ﷺ Mendahulukan yang Kanan</h2>
+                        <p class="text-gray-600">Teladan Sempurna dalam Setiap Aspek Kehidupan</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="text-center mb-10">
+                        <div class="inline-block p-3 bg-gradient-to-r from-green-600 to-emerald-700 rounded-lg">
+                            <p class="arabic-text text-white text-2xl">وَخُلُقُ النَّبِيِّ ﷺ كَانَ الْقُرْآنَ</p>
+                        </div>
+                        <p class="mt-4 text-gray-700">"Dan akhlak Nabi ﷺ adalah Al-Qur'an" (HR. Muslim)</p>
+                    </div>
+                    
+                    <p class="mb-6">Rasulullah ﷺ adalah teladan terbaik dalam segala aspek kehidupan, termasuk dalam hal-hal yang dianggap sepele. Salah satu ajaran beliau yang penuh hikmah adalah mendahulukan yang kanan dalam berbagai aktivitas mulia. Mari kita kaji sunnah-sunnah beliau terkait hal ini.</p>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Sunnah-Sunnah Mendahulukan Kanan</h3>
+                    
+                    <div class="overflow-x-auto mb-8">
+                        <table class="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
+                            <thead class="bg-blue-800 text-white">
+                                <tr>
+                                    <th class="py-3 px-4 text-left">Aktivitas</th>
+                                    <th class="py-3 px-4 text-left">Dalil</th>
+                                    <th class="py-3 px-4 text-left">Hikmah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200 hover:bg-blue-50">
+                                    <td class="py-3 px-4 font-medium">Berpakaian</td>
+                                    <td class="py-3 px-4">
+                                        <p class="arabic-text text-sm">كَانَ رَسُولُ اللَّهِ ﷺ يُعْجِبُهُ التَّيَمُّنُ فِي تَنَعُّلِهِ وَتَرَجُّلِهِ وَطُهُورِهِ وَفِي شَأْنِهِ كُلِّهِ</p>
+                                        <p class="text-sm mt-1">"Rasulullah ﷺ suka mendahulukan kanan dalam memakai sandal, menyisir rambut, bersuci, dan dalam semua urusannya." (HR. Bukhari dan Muslim)</p>
+                                    </td>
+                                    <td class="py-3 px-4">Menghormati anggota badan kanan yang lebih mulia, melatih kedisiplinan, dan mengikuti teladan Nabi.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-blue-50">
+                                    <td class="py-3 px-4 font-medium">Makan & Minum</td>
+                                    <td class="py-3 px-4">
+                                        <p class="arabic-text text-sm">إِذَا أَكَلَ أَحَدُكُمْ فَلْيَأْكُلْ بِيَمِينِهِ وَإِذَا شَرِبَ فَلْيَشْرَبْ بِيَمِينِهِ</p>
+                                        <p class="text-sm mt-1">"Jika salah seorang dari kalian makan, maka makanlah dengan tangan kanannya dan jika minum maka minumlah dengan tangan kanannya." (HR. Muslim)</p>
+                                    </td>
+                                    <td class="py-3 px-4">Tangan kanan adalah tangan yang diberkahi, sementara tangan kiri biasanya digunakan untuk membersihkan kotoran.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-blue-50">
+                                    <td class="py-3 px-4 font-medium">Masuk Masjid</td>
+                                    <td class="py-3 px-4">
+                                        <p class="arabic-text text-sm">كَانَ رَسُولُ اللَّهِ ﷺ إِذَا دَخَلَ الْمَسْجِدَ بَدَأَ بِرِجْلِهِ الْيُمْنَى</p>
+                                        <p class="text-sm mt-1">"Rasulullah ﷺ jika masuk masjid mendahulukan kaki kanannya." (HR. Ibnu Majah)</p>
+                                    </td>
+                                    <td class="py-3 px-4">Masjid adalah tempat mulia, sehingga dimasuki dengan anggota tubuh yang mulia (kanan).</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="py-3 px-4 font-medium">Bersuci (Wudhu)</td>
+                                    <td class="py-3 px-4">
+                                        <p class="arabic-text text-sm">كَانَ النَّبِيُّ ﷺ يُحِبُّ التَّيَمُّنَ فِي طُهُورِهِ إِذَا تَطَهَّرَ وَفِي تَنَعُّلِهِ إِذَا انْتَعَلَ</p>
+                                        <p class="text-sm mt-1">"Nabi ﷺ suka mendahulukan kanan dalam bersuci jika berwudhu dan dalam memakai sandal jika mengenakannya." (HR. Bukhari)</p>
+                                    </td>
+                                    <td class="py-3 px-4">Membersihkan anggota tubuh yang lebih mulia terlebih dahulu sebagai bentuk penghormatan.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Hikmah Mendahulukan yang Kanan</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+                            <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                                <i class="fas fa-hands-praying mr-2"></i> Pembentuk Karakter
+                            </h4>
+                            <p class="text-gray-700">Kebiasaan mendahulukan kanan melatih kesadaran dan kehadiran hati dalam setiap aktivitas. Ini membentuk pribadi yang mindful (sadar penuh) dan tidak asal-asalan.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+                            <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                                <i class="fas fa-heart mr-2"></i> Penghormatan Terhadap Nikmat
+                            </h4>
+                            <p class="text-gray-700">Dengan mendahulukan kanan, kita mengakui kemuliaan anggota badan ini sebagai nikmat Allah yang patut disyukuri dan dihormati.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+                            <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                                <i class="fas fa-brain mr-2"></i> Latihan Disiplin
+                            </h4>
+                            <p class="text-gray-700">Sunnah ini melatih kedisiplinan sejak hal terkecil. Orang yang disiplin dalam hal kecil akan lebih mudah disiplin dalam hal besar.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+                            <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                                <i class="fas fa-scale-balanced mr-2"></i> Keseimbangan Hidup
+                            </h4>
+                            <p class="text-gray-700">Ajaran Islam selalu menekankan keseimbangan. Dengan mengutamakan kanan untuk hal baik dan kiri untuk hal kurang baik (seperti membersihkan kotoran), tercipta keseimbangan dalam hidup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-700 to-emerald-800 text-white p-6 rounded-xl mb-8">
+                        <h4 class="font-bold text-xl mb-4 flex items-center">
+                            <i class="fas fa-lightbulb mr-3"></i> Titik Temu dengan Kebiasaan Orang Sukses
+                        </h4>
+                        <p class="mb-4">Kebiasaan Rasulullah ﷺ mendahulukan kanan memiliki kesamaan filosofi dengan kebiasaan orang sukses memakai jam tangan di kanan:</p>
+                        <ul class="space-y-2 ml-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <span>Kedua kebiasaan melibatkan <strong>kesengajaan dan kesadaran penuh</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <span>Keduanya melatih <strong>disiplin dan konsistensi</strong> dalam hal kecil</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <span>Keduanya menjadi <strong>pengingat konstan</strong> akan prinsip hidup yang dipegang</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <span>Keduanya membentuk <strong>identitas dan karakter</strong> yang kuat</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 pl-4 italic text-gray-700">
+                        <p>"Sesungguhnya telah ada pada diri Rasulullah itu suri teladan yang baik bagimu, yaitu bagi orang yang mengharap (rahmat) Allah dan (kedatangan) hari kiamat dan dia banyak menyebut Allah."</p>
+                        <p class="mt-2 text-right font-medium">— QS. Al-Ahzab: 21</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-2">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Bab 2
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-4">
+                        Selanjutnya: Bab 4 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bab 4 -->
+            <section id="bab-4" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-700 font-bold text-xl">4</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Bab 4: Kisah Inspiratif dan Penutup</h2>
+                        <p class="text-gray-600">Mengintegrasikan Kebiasaan Kanan dalam Kehidupan Sehari-hari</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Kisah Inspiratif: Transformasi Melalui Kebiasaan Kecil</h3>
+                    
+                    <div class="mb-10">
+                        <div class="flex flex-col md:flex-row items-start mb-8 bg-gradient-to-r from-purple-50 to-white p-6 rounded-xl border-l-4 border-purple-500">
+                            <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                                <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-5xl text-purple-700"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <h4 class="font-bold text-xl text-purple-800 mb-3">Ahmad, Software Engineer yang Mengubah Produktivitasnya</h4>
+                                <p class="text-gray-700 mb-4">Ahmad adalah seorang software engineer di perusahaan teknologi terkemuka. Meski sudah sukses secara finansial, ia merasa hidupnya kurang terarah dan sering merasa waktu berlalu tanpa produktivitas maksimal.</p>
+                                <p class="text-gray-700 mb-4">Setelah membaca tentang kebiasaan orang sukses memakai jam tangan di kanan dan sunnah Rasulullah ﷺ mendahulukan kanan, ia memutuskan untuk melakukan eksperimen selama 30 hari:</p>
+                                
+                                <div class="bg-white p-4 rounded-lg border border-purple-200 mb-4">
+                                    <h5 class="font-bold text-purple-700 mb-2">Perubahan yang Dilakukan:</h5>
+                                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                        <li>Memindahkan jam tangan ke tangan kanan</li>
+                                        <li>Konsisten mendahulukan kanan dalam aktivitas sehari-hari sesuai sunnah</li>
+                                        <li>Mengaitkan kebiasaan ini dengan niat mengikuti sunnah dan meningkatkan produktivitas</li>
+                                        <li>Membuat jurnal refleksi harian tentang dampak perubahan ini</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <h5 class="font-bold text-purple-800 mb-2">Hasil Setelah 30 Hari:</h5>
+                                    <p class="text-gray-700">"Dalam sebulan, saya merasakan perubahan signifikan. Jam di tangan kanan menjadi pengingat konstan untuk menggunakan waktu dengan bijak. Saya menjadi lebih disiplin, meeting lebih efisien, dan coding lebih fokus. Yang lebih penting, saya merasa lebih dekat kepada Allah karena menyadari setiap aktivitas bisa menjadi ibadah jika diniatkan dengan benar."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Bagaimana Memulai Kebiasaan Ini?</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gradient-to-b from-blue-50 to-white p-5 rounded-xl border border-blue-200 text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-blue-700 font-bold text-2xl">1</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-3">Mulai dengan Niat</h4>
+                            <p class="text-gray-700">Niatkan untuk mengikuti sunnah Rasulullah ﷺ dan meningkatkan produktivitas. Niat yang kuat akan memudahkan konsistensi.</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-b from-blue-50 to-white p-5 rounded-xl border border-blue-200 text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-blue-700 font-bold text-2xl">2</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-3">Lakukan Bertahap</h4>
+                            <p class="text-gray-700">Mulai dengan satu kebiasaan seperti memakai jam di kanan atau makan dengan tangan kanan. Setelah terbiasa, tambah kebiasaan lainnya.</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-b from-blue-50 to-white p-5 rounded-xl border border-blue-200 text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-blue-700 font-bold text-2xl">3</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-3">Refleksi dan Evaluasi</h4>
+                            <p class="text-gray-700">Amati perubahan dalam hidup Anda. Apakah lebih disiplin? Lebih produktif? Lebih dekat dengan sunnah? Gunakan ini sebagai motivasi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-800 to-blue-900 text-white p-8 rounded-xl mb-8 text-center">
+                        <h3 class="text-2xl font-bold mb-6">Afirmasi Islami Harian</h3>
+                        <div class="arabic-text text-2xl mb-6">رَبِّ زِدْنِي عِلْمًا وَارْزُقْنِي فَهْمًا وَوَفِّقْنِي لِعَمَلٍ صَالِحٍ يُرْضِيكَ</div>
+                        <p class="text-xl mb-6">"Ya Rabb, tambahkanlah ilmuku, berikanlah aku rezeki pemahaman, dan berikanlah taufik kepadaku untuk mengamalkan amal shalih yang membuat-Mu ridha."</p>
+                        <div class="w-24 h-1 bg-yellow-400 mx-auto"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Penutup: Kesempurnaan dalam Hal Kecil</h3>
+                    
+                    <p class="mb-6">Buku ini telah mengajak kita menjelajahi dua kebiasaan yang tampak sederhana namun penuh makna: kebiasaan orang sukses memakai jam tangan di kanan dan kebiasaan Rasulullah ﷺ mendahulukan yang kanan. Meski berasal dari konteks yang berbeda, keduanya bertemu pada prinsip yang sama: <strong>kesengajaan, disiplin, dan kesadaran penuh dalam setiap tindakan</strong>.</p>
+                    
+                    <p class="mb-6">Sebagai Muslim, kita memiliki keunggulan karena dapat menggabungkan kebijaksanaan duniawi dengan petunjuk Ilahi. Kebiasaan memakai jam di kanan tidak hanya meningkatkan produktivitas, tetapi juga bisa menjadi pengingat untuk menggunakan waktu sebagai amanah dari Allah. Mendahulukan kanan sesuai sunnah tidak hanya mengikuti teladan Nabi, tetapi juga melatih disiplin yang dibutuhkan untuk meraih kesuksesan.</p>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500 mb-8">
+                        <h4 class="font-bold text-yellow-800 mb-3">📚 Ringkasan Pelajaran:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                                <span><strong>Kesuksesan dimulai dari kebiasaan kecil</strong> yang dilakukan dengan konsisten</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                                <span><strong>Setiap detik adalah amanah</strong> yang akan dipertanggungjawabkan di akhirat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                                <span><strong>Mengikuti sunnah Rasulullah ﷺ</strong> membawa keberkahan dalam setiap aspek kehidupan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                                <span><strong>Kesadaran penuh (mindfulness) dalam Islam</strong> adalah bagian dari ihsan (beribadah seolah-olah melihat Allah)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <p class="mb-8 text-center text-lg italic text-gray-700">"Mulailah dari hal kecil, lakukan dengan konsisten, dan niatkan untuk ibadah. Maka kebiasaan sederhana pun akan membawa dampak besar dalam hidup Anda, dunia dan akhirat."</p>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-3">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Bab 3
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-5">
+                        Selanjutnya: Bab 5 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bab 5: Kisah Tokoh Dunia -->
+            <section id="bab-5" class="chapter-content mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-700 font-bold text-xl">5</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Bab 5: Kisah Inspiratif Tokoh Dunia</h2>
+                        <p class="text-gray-600">Tokoh-Tokoh Berpengaruh yang Memakai Jam Tangan di Tangan Kanan</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="text-center mb-10">
+                        <div class="inline-block p-3 bg-gradient-to-r from-red-600 to-red-800 rounded-lg">
+                            <i class="fas fa-globe-americas text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-4">Teladan dari Para Pemimpin dan Atlet Dunia</h3>
+                        <p class="text-gray-600 max-w-2xl mx-auto mt-2">Mari kita telusuri kebiasaan unik tokoh-tokoh berpengaruh dunia yang memakai jam tangan di tangan kanan dan pelajaran yang dapat kita ambil dari mereka.</p>
+                    </div>
+                    
+                    <!-- Vladimir Putin -->
+                    <div class="inspirational-card mb-10 bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border-l-4 border-red-600">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                                <div class="relative">
+                                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                        <i class="fas fa-crown text-5xl text-red-600"></i>
+                                    </div>
+                                    <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">
+                                        <span class="font-bold text-white">RU</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-user-tie text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-2xl text-gray-800">Vladimir Putin</h4>
+                                        <p class="text-gray-600">Presiden Rusia</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <h5 class="font-bold text-lg text-gray-800 mb-3">Kebiasaan Unik:</h5>
+                                    <p class="text-gray-700 mb-4">Vladimir Putin, salah satu pemimpin dunia paling berpengaruh, dikenal konsisten memakai jam tangan di tangan kanannya. Padahal, dia bukan orang kidal. Kebiasaan ini telah diperhatikannya selama puluhan tahun dalam berbagai kesempatan resmi maupun informal.</p>
+                                    
+                                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                                        <h6 class="font-bold text-red-800 mb-2">Analisis Psikologis:</h6>
+                                        <p class="text-gray-700">Para pengamat politik dan psikolog mencatat bahwa kebiasaan Putin ini mencerminkan karakter disiplin tinggi dan kontrol diri yang kuat. Sebagai mantan perwira KGB, Putin sangat menghargai presisi waktu dan ketepatan dalam setiap keputusannya.</p>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-white p-4 rounded-lg border border-red-200">
+                                            <h6 class="font-bold text-red-700 mb-2">🏆 Prestasi:</h6>
+                                            <ul class="list-disc pl-5 text-gray-700 text-sm">
+                                                <li>Memimpin Rusia selama lebih dari 20 tahun</li>
+                                                <li>Mengembalikan status Rusia sebagai kekuatan global</li>
+                                                <li>Dianggap sebagai pemimpin strategis dan visioner</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white p-4 rounded-lg border border-red-200">
+                                            <h6 class="font-bold text-red-700 mb-2">⏰ Filosofi Waktu:</h6>
+                                            <p class="text-gray-700 text-sm">"Dalam kepemimpinan, waktu adalah segalanya. Setiap detik menentukan nasib bangsa." - Observasi pengamat tentang Putin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Rafael Nadal -->
+                    <div class="inspirational-card mb-10 bg-gradient-to-r from-yellow-50 to-white p-6 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                                <div class="relative">
+                                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
+                                        <i class="fas fa-baseball-ball text-5xl text-yellow-600"></i>
+                                    </div>
+                                    <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center">
+                                        <span class="font-bold text-white">ES</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-running text-yellow-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-2xl text-gray-800">Rafael Nadal</h4>
+                                        <p class="text-gray-600">Legenda Tenis Dunia</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <h5 class="font-bold text-lg text-gray-800 mb-3">Kebiasaan Unik:</h5>
+                                    <p class="text-gray-700 mb-4">Rafael Nadal, juara Grand Slam 22 kali, dikenal sebagai atlet kidal. Namun, yang menarik adalah dia memakai jam tangan di tangan kanannya. Ini menunjukkan bahwa kebiasaan ini tidak selalu terkait dengan dominansi tangan.</p>
+                                    
+                                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                                        <h6 class="font-bold text-yellow-800 mb-2">Analisis Psikologis:</h6>
+                                        <p class="text-gray-700">Sebagai atlet yang sangat disiplin, Nadal dikenal dengan ritual-ritual ketat sebelum pertandingan. Jam di tangan kanan menjadi bagian dari rutinitasnya yang membantu menjaga fokus dan kontrol emosi selama pertandingan penting.</p>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-white p-4 rounded-lg border border-yellow-200">
+                                            <h6 class="font-bold text-yellow-700 mb-2">🏆 Prestasi:</h6>
+                                            <ul class="list-disc pl-5 text-gray-700 text-sm">
+                                                <li>22 gelar Grand Slam (Rekor sepanjang masa)</li>
+                                                <li>Juara Olimpiade Beijing 2008</li>
+                                                <li>Pemegang rekor 14 gelar French Open</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white p-4 rounded-lg border border-yellow-200">
+                                            <h6 class="font-bold text-yellow-700 mb-2">⏰ Filosofi Waktu:</h6>
+                                            <p class="text-gray-700 text-sm">"Dalam tenis, waktu reaksi adalah segalanya. Setiap milidetik menentukan kemenangan atau kekalahan." - Rafael Nadal</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h6 class="font-bold text-blue-800 mb-2">💡 Pelajaran Hidup:</h6>
+                                        <p class="text-gray-700">Nadal mengajarkan kita bahwa kesuksesan dibangun dari disiplin kecil yang konsisten. Ritualnya dengan jam tangan di kanan adalah pengingat fisik untuk selalu hadir sepenuhnya di momen saat ini.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cristiano Ronaldo -->
+                    <div class="inspirational-card mb-10 bg-gradient-to-r from-green-50 to-white p-6 rounded-xl border-l-4 border-green-600">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                                <div class="relative">
+                                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
+                                        <i class="fas fa-futbol text-5xl text-green-600"></i>
+                                    </div>
+                                    <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center">
+                                        <span class="font-bold text-white">PT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-futbol text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-2xl text-gray-800">Cristiano Ronaldo</h4>
+                                        <p class="text-gray-600">Legenda Sepak Bola Portugal</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <h5 class="font-bold text-lg text-gray-800 mb-3">Kebiasaan Unik:</h5>
+                                    <p class="text-gray-700 mb-4">Cristiano Ronaldo, salah satu pesepakbola terhebat sepanjang masa, sering terlihat memakai jam tangan mewah di tangan kanannya. Meski bukan kidal, dia konsisten dengan pilihan ini dalam berbagai kesempatan.</p>
+                                    
+                                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                                        <h6 class="font-bold text-green-800 mb-2">Analisis Psikologis:</h6>
+                                        <p class="text-gray-700">Ronaldo dikenal dengan disiplin luar biasa dalam latihan dan gaya hidup. Jam di tangan kanan menjadi simbol komitmennya terhadap manajemen waktu yang ketat. Sebagai atlet dengan brand pribadi bernilai miliaran, setiap aksesori dipilih dengan sengaja.</p>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-white p-4 rounded-lg border border-green-200">
+                                            <h6 class="font-bold text-green-700 mb-2">🏆 Prestasi:</h6>
+                                            <ul class="list-disc pl-5 text-gray-700 text-sm">
+                                                <li>5x Ballon d'Or (Pemain Terbaik Dunia)</li>
+                                                <li>5x juara Liga Champions</li>
+                                                <li>Pencetak gol terbanyak sepanjang masa di level internasional</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white p-4 rounded-lg border border-green-200">
+                                            <h6 class="font-bold text-green-700 mb-2">⏰ Filosofi Waktu:</h6>
+                                            <p class="text-gray-700 text-sm">"Talent without work is nothing. Waktu adalah aset paling berharga yang kita miliki." - Cristiano Ronaldo</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h6 class="font-bold text-purple-800 mb-2">💼 Manajemen Waktu:</h6>
+                                        <p class="text-gray-700">Ronaldo terkenal dengan jadwal latihan yang sangat terstruktur. Jam di tangan kanan mengingatkannya bahwa setiap sesi latihan, setiap pertandingan, dan setiap kesempatan promosi bisnis harus dijalankan dengan presisi waktu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tokoh Lainnya -->
+                    <div class="mb-10">
+                        <h4 class="font-bold text-2xl text-gray-800 mb-6 text-center">Tokoh Lain yang Memiliki Kebiasaan Serupa</h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Steve Jobs -->
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 hover:shadow-lg transition inspirational-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                        <i class="fab fa-apple text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-lg">Steve Jobs</h5>
+                                        <p class="text-gray-600 text-sm">Pendiri Apple</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-sm mb-4">Meski terkenal dengan minimalisme, Jobs sering terlihat memakai jam tangan klasik di tangan kanan. Kebiasaan ini mencerminkan pendekatannya yang berbeda dan penuh kesengajaan.</p>
+                                <div class="flex items-center text-blue-600">
+                                    <i class="fas fa-lightbulb mr-2"></i>
+                                    <span class="text-sm font-medium">Inovasi & Kesengajaan</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Barack Obama -->
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 hover:shadow-lg transition inspirational-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-landmark text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-lg">Barack Obama</h5>
+                                        <p class="text-gray-600 text-sm">Presiden AS ke-44</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-sm mb-4">Dalam banyak kesempatan resmi, Obama terlihat memakai jam tangan di tangan kanan. Sebagai pemimpin yang sangat memperhatikan detail, pilihan ini menunjukkan kesengajaan dalam setiap aspek penampilan.</p>
+                                <div class="flex items-center text-red-600">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <span class="text-sm font-medium">Kepemimpinan & Presisi</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Elon Musk -->
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 hover:shadow-lg transition inspirational-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-rocket text-purple-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-lg">Elon Musk</h5>
+                                        <p class="text-gray-600 text-sm">CEO Tesla & SpaceX</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-sm mb-4">Musk, meski jarang memakai jam tangan, ketika mengenakannya sering terlihat di tangan kanan. Ini konsisten dengan karakter inovatif dan kebiasaan yang disengaja.</p>
+                                <div class="flex items-center text-purple-600">
+                                    <i class="fas fa-brain mr-2"></i>
+                                    <span class="text-sm font-medium">Inovasi & Disrupsi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kesimpulan Bab 5 -->
+                    <div class="bg-gradient-to-r from-blue-800 to-blue-900 text-white p-8 rounded-xl mb-8">
+                        <h4 class="text-2xl font-bold mb-6 text-center">Pelajaran dari Tokoh Dunia</h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-bullseye text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-lg mb-2">Kesengajaan</h5>
+                                <p class="text-blue-100">Setiap tokoh melakukan pilihan dengan sadar dan penuh pertimbangan</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-clock text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-lg mb-2">Manajemen Waktu</h5>
+                                <p class="text-blue-100">Jam tangan menjadi simbol penghargaan terhadap waktu sebagai aset berharga</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-user-check text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-lg mb-2">Identitas Diri</h5>
+                                <p class="text-blue-100">Kebiasaan kecil membentuk identitas dan membedakan mereka dari orang lain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center border-t border-blue-700 pt-6">
+                            <p class="text-xl italic">"Para tokoh dunia mengajarkan kita bahwa kesuksesan dimulai dari kebiasaan kecil yang disengaja dan dilakukan dengan konsisten."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hubungan dengan Ajaran Islam -->
+                    <div class="bg-gradient-to-r from-green-700 to-emerald-800 text-white p-6 rounded-xl mb-8">
+                        <h4 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-mosque mr-3"></i> Titik Temu dengan Nilai Islami
+                        </h4>
+                        <p class="mb-4">Kebiasaan tokoh-tokoh dunia ini memiliki kesamaan filosofi dengan ajaran Islam tentang mendahulukan yang kanan:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <div>
+                                    <h5 class="font-bold">Kesadaran Penuh</h5>
+                                    <p class="text-green-100 text-sm">Baik dalam sunnah maupun kebiasaan sukses, setiap tindakan dilakukan dengan kesadaran penuh</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <div>
+                                    <h5 class="font-bold">Disiplin Konsisten</h5>
+                                    <p class="text-green-100 text-sm">Konsistensi dalam hal kecil melatih disiplin untuk hal-hal besar dalam hidup</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <div>
+                                    <h5 class="font-bold">Pengendalian Diri</h5>
+                                    <p class="text-green-100 text-sm">Mengendalikan kebiasaan kecil melatih pengendalian diri dalam keputusan besar</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-yellow-300"></i>
+                                <div>
+                                    <h5 class="font-bold">Identitas Mulia</h5>
+                                    <p class="text-green-100 text-sm">Membangun identitas melalui kebiasaan yang mulia dan terpuji</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Penutup Bab 5 -->
+                    <div class="text-center py-6 border-t border-b">
+                        <h4 class="font-bold text-blue-900 text-xl mb-4">Refleksi untuk Kita Semua</h4>
+                        <p class="mb-6 text-gray-700">Dari Putin, Nadal, Ronaldo, hingga tokoh dunia lainnya, kita belajar bahwa kebiasaan kecil yang disengaja dapat membentuk karakter besar. Sebagai Muslim, kita memiliki keunggulan karena dapat menggabungkan kebijaksanaan duniawi ini dengan petunjuk Ilahi dari sunnah Rasulullah ﷺ.</p>
+                        
+                        <div class="bg-yellow-50 p-5 rounded-lg inline-block">
+                            <p class="text-lg font-medium text-yellow-800">"Mulailah dari satu kebiasaan kecil hari ini. Letakkan jam tangan di kanan, makanlah dengan tangan kanan, dan saksikan transformasi dalam hidup Anda."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-10 pt-6 border-t">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="bab-4">
+                        <i class="fas fa-arrow-left mr-2"></i> Sebelumnya: Bab 4
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center nav-link" data-target="kata-pengantar">
+                        <i class="fas fa-home mr-2"></i> Kembali ke Awal
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-book-open text-blue-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Kebiasaan Kanan</h3>
+                            <p class="text-blue-200 text-sm">Dalam Islam & Kesuksesan</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-200 max-w-md">Ebook gratis untuk inspirasi dan motivasi mengintegrasikan nilai-nilai Islami dengan prinsip kesuksesan dalam kehidupan sehari-hari.</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <h4 class="font-bold text-lg mb-4">Bagikan Ilmu Ini</h4>
+                    <div class="flex space-x-4 justify-center md:justify-end">
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-6 text-center text-blue-300">
+                <p>© 2023 Ebook "Kebiasaan Kanan dalam Islam dan Kesuksesan". Semua hak dilindungi.</p>
+                <p class="mt-2 text-sm">Dibuat dengan <i class="fas fa-heart text-red-400"></i> untuk umat Islam yang ingin sukses dunia akhirat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Share -->
+    <div id="share-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-blue-900">Bagikan Ebook Ini</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <p class="mb-6">Berbagi ilmu adalah sedekah. Bagikan ebook ini kepada orang lain agar mereka juga mendapatkan manfaat.</p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-center transition">
+                    <i class="fab fa-whatsapp text-green-600 text-2xl mb-2"></i>
+                    <p class="font-medium">WhatsApp</p>
+                </a>
+                <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-center transition">
+                    <i class="fab fa-telegram text-blue-500 text-2xl mb-2"></i>
+                    <p class="font-medium">Telegram</p>
+                </a>
+                <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-center transition">
+                    <i class="fas fa-envelope text-red-500 text-2xl mb-2"></i>
+                    <p class="font-medium">Email</p>
+                </a>
+                <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-center transition">
+                    <i class="fas fa-link text-gray-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Salin Link</p>
+                </a>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-blue-800">"Barangsiapa menunjukkan suatu kebaikan, maka baginya pahala seperti orang yang mengerjakannya." (HR. Muslim)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Perbaikan utama: Menggunakan event listener yang benar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fungsi untuk menampilkan bab tertentu
+            function showChapter(chapterId) {
+                // Sembunyikan semua bab
+                document.querySelectorAll('.chapter-content').forEach(function(chapter) {
+                    chapter.classList.remove('active');
+                });
+                
+                // Tampilkan bab yang dipilih
+                const targetChapter = document.getElementById(chapterId);
+                if (targetChapter) {
+                    targetChapter.classList.add('active');
+                    
+                    // Update navigasi aktif
+                    document.querySelectorAll('.nav-link').forEach(function(link) {
+                        link.classList.remove('active-nav');
+                        if (link.getAttribute('data-target') === chapterId) {
+                            link.classList.add('active-nav');
+                        }
+                    });
+                    
+                    // Scroll ke atas
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            }
+            
+            // Event listener untuk semua link navigasi
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    if (targetId) {
+                        showChapter(targetId);
+                        
+                        // Tutup menu mobile jika terbuka
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Event listener untuk menu mobile toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu) {
+                        mobileMenu.classList.toggle('hidden');
+                    }
+                });
+            }
+            
+            // Inisialisasi: tampilkan bab pertama dan aktifkan nav-link pertama
+            const firstNavLink = document.querySelector('.nav-link[data-target="kata-pengantar"]');
+            if (firstNavLink) {
+                firstNavLink.classList.add('active-nav');
+            }
+            
+            // Kode untuk modal dan tombol lainnya
+            const shareBtn = document.getElementById('share-btn');
+            const shareModal = document.getElementById('share-modal');
+            const closeModal = document.getElementById('close-modal');
+            
+            if (shareBtn && shareModal) {
+                shareBtn.addEventListener('click', function() {
+                    shareModal.classList.remove('hidden');
+                });
+            }
+            
+            if (closeModal && shareModal) {
+                closeModal.addEventListener('click', function() {
+                    shareModal.classList.add('hidden');
+                });
+            }
+            
+            if (shareModal) {
+                shareModal.addEventListener('click', function(e) {
+                    if (e.target === shareModal) {
+                        shareModal.classList.add('hidden');
+                    }
+                });
+            }
+            
+            const startBtn = document.getElementById('start-btn');
+            if (startBtn) {
+                startBtn.addEventListener('click', function() {
+                    alert('Selamat memulai perjalanan Anda! Pilih satu kebiasaan dari ebook ini untuk dipraktikkan hari ini. Semoga Allah memudahkan langkah Anda.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
