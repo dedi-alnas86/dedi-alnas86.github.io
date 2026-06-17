@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negosiasi Takdir · Zamzam & Isra Mi'raj (Dark)</title>
+    <!-- Font & Ikon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0e12;
+            background-image: 
+                radial-gradient(ellipse at 20% 50%, rgba(56, 89, 120, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(120, 100, 80, 0.10) 0%, transparent 60%),
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 6px);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem 1.2rem;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        /* ornamen islami di background */
+        body::before {
+            content: "☪";
+            position: fixed;
+            font-size: 22rem;
+            color: rgba(255, 255, 255, 0.02);
+            bottom: -5%;
+            right: -5%;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "۞";
+            position: fixed;
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.015);
+            top: -5%;
+            left: -5%;
+            pointer-events: none;
+        }
+
+        /* Sampul buku — dark elegan */
+        .book-wrapper {
+            max-width: 1000px;
+            width: 100%;
+            background: linear-gradient(165deg, #1a212a 0%, #131a21 50%, #1a212a 100%);
+            border-radius: 36px 36px 28px 28px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+            padding: 2.8rem 2.5rem;
+            position: relative;
+            border: 1px solid #2d3a48;
+            transition: 0.2s;
+            backdrop-filter: blur(2px);
+        }
+
+        /* hiasan atas */
+        .book-wrapper::before {
+            content: "✦ ✦ ✦";
+            font-size: 1rem;
+            letter-spacing: 12px;
+            color: #8a7a66;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a212a;
+            padding: 0 20px;
+            opacity: 0.5;
+        }
+
+        .book-wrapper::after {
+            content: "✧ ✧ ✧";
+            font-size: 1rem;
+            letter-spacing: 12px;
+            color: #8a7a66;
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.2;
+        }
+
+        /* HEADER BUKU */
+        .book-header {
+            text-align: center;
+            border-bottom: 2px solid #2d3a48;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .book-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #e8e0d7;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .book-header h1 i {
+            color: #b8a48b;
+            font-size: 2.6rem;
+            margin: 0 10px;
+        }
+
+        .book-header .subtitle {
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: #c9bcae;
+            background: #232c38;
+            display: inline-block;
+            padding: 0.3rem 2.4rem;
+            border-radius: 60px;
+            letter-spacing: 0.6px;
+            margin-top: 0.4rem;
+            box-shadow: inset 0 1px 4px rgba(255, 247, 235, 0.04);
+            border: 1px solid #3d4a59;
+        }
+
+        .book-header .meta-line {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.5rem;
+            color: #aab3bd;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .book-header .meta-line i {
+            color: #b8a48b;
+            margin-right: 6px;
+        }
+
+        .badge-waktu {
+            background: #b8a48b;
+            color: #141a20;
+            padding: 0.2rem 1.6rem;
+            border-radius: 40px;
+            font-size: 0.78rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        /* ILUSTRASI TEMATIK */
+        .visual-spread {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem 2rem;
+            background: rgba(30, 40, 50, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.6rem 1.8rem;
+            border-radius: 80px 20px 80px 20px;
+            margin: 2.2rem 0 2.8rem 0;
+            box-shadow: inset 0 1px 4px rgba(255,255,255,0.03), 0 10px 24px -14px #00000080;
+            border: 1px solid #2d3a48;
+        }
+
+        .visual-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+            flex: 1 0 100px;
+        }
+
+        .visual-item .icon-circle {
+            background: #1a212a;
+            width: 80px;
+            height: 80px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            color: #d4cdc2;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px #3d4a59;
+            transition: 0.2s;
+            margin-bottom: 6px;
+        }
+
+        .visual-item .icon-circle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px #b8a48b;
+        }
+
+        .visual-item .icon-circle .fa-hand-holding-heart { color: #d6a48b; }
+        .visual-item .icon-circle .fa-water { color: #6ab0d4; }
+        .visual-item .icon-circle .fa-mosque { color: #8bba9c; }
+        .visual-item .icon-circle .fa-praying-hands { color: #c9a88a; }
+
+        .visual-item span {
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #d0c7bb;
+            background: #232c38;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #3d4a59;
+            letter-spacing: 0.3px;
+        }
+
+        /* TYPOGRAPHY — rapi & nyaman */
+        .book-content {
+            font-family: 'Merriweather', serif;
+            color: #ddd6cd;
+        }
+
+        .book-content h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 1.9rem;
+            color: #e8e0d7;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 8px solid #b8a48b;
+            padding-left: 1.4rem;
+        }
+
+        .book-content h2 i {
+            color: #b8a48b;
+            margin-right: 12px;
+            font-size: 1.7rem;
+        }
+
+        .book-content p {
+            line-height: 2.1;
+            margin: 1.2rem 0;
+            font-size: 1.08rem;
+            font-weight: 400;
+            color: #cfc6bb;
+            text-align: justify;
+        }
+
+        .book-content p:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .book-content .ayat-indah {
+            background: rgba(35, 44, 56, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 1rem 2.2rem;
+            border-radius: 60px 12px 60px 12px;
+            text-align: center;
+            font-style: italic;
+            color: #b8d5c0;
+            border: 1px solid #3d4a59;
+            font-size: 1.1rem;
+            margin: 1.8rem 0;
+        }
+
+        .hadits-box {
+            background: rgba(30, 40, 50, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.4rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border-left: 10px solid #b8a48b;
+            margin: 1.8rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hadits-box p {
+            margin: 0.2rem 0;
+            font-size: 1.05rem;
+            color: #ddd6cd;
+            text-align: left;
+        }
+
+        .hadits-box i {
+            color: #b8a48b;
+            margin-right: 10px;
+        }
+
+        /* testimoni ulama */
+        .ulama-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            background: rgba(25, 35, 45, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.8rem 1.5rem;
+            border-radius: 50px 12px 50px 12px;
+            margin: 1.8rem 0;
+            border: 1px solid #2d3a48;
+        }
+
+        .ulama-grid blockquote {
+            background: rgba(30, 40, 50, 0.6);
+            padding: 1.2rem 1.2rem 1rem 1.2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #2d3a48;
+            font-style: italic;
+            font-size: 0.98rem;
+            color: #d0c7bb;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .ulama-grid blockquote:hover {
+            border-color: #b8a48b;
+        }
+
+        .ulama-grid blockquote::before {
+            content: "“";
+            font-size: 2.8rem;
+            color: #b8a48b;
+            line-height: 0.6;
+            display: inline-block;
+            margin-right: 2px;
+        }
+
+        .ulama-grid blockquote strong {
+            color: #e8e0d7;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .doa-highlight {
+            background: rgba(25, 35, 45, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.6rem 1.8rem;
+            border-radius: 60px 12px 60px 12px;
+            text-align: center;
+            margin: 1.6rem 0;
+            border: 1px solid #2d3a48;
+        }
+
+        .doa-highlight p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #e8e0d7;
+            margin: 0;
+            text-align: center;
+        }
+
+        .doa-highlight small {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #b0a89a;
+            font-weight: 400;
+        }
+
+        /* list hadits lebih rapi */
+        .hadits-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .hadits-list li {
+            margin-bottom: 0.8rem;
+            background: rgba(30, 40, 50, 0.5);
+            padding: 0.7rem 1.6rem;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            border: 1px solid #2d3a48;
+            transition: 0.2s;
+        }
+
+        .hadits-list li:hover {
+            border-color: #b8a48b;
+        }
+
+        .hadits-list li i {
+            color: #8bba9c;
+        }
+
+        .hadits-list li .hadits-text {
+            color: #ddd6cd;
+        }
+
+        .hadits-list li .hadits-source {
+            font-size: 0.85rem;
+            color: #aab3bd;
+        }
+
+        /* FOOTER */
+        .book-footer {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            text-align: center;
+            border-top: 2px solid #2d3a48;
+            color: #aab3bd;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem 2.8rem;
+            font-size: 0.95rem;
+        }
+
+        .book-footer i {
+            color: #b8a48b;
+            margin-right: 5px;
+        }
+
+        /* responsif */
+        @media (max-width: 700px) {
+            .book-wrapper { padding: 1.8rem 1.2rem; }
+            .book-header h1 { font-size: 2.4rem; }
+            .book-header .subtitle { font-size: 1.0rem; padding: 0.2rem 1.2rem; }
+            .visual-spread { gap: 0.8rem; padding: 1rem; }
+            .visual-item .icon-circle { width: 64px; height: 64px; font-size: 2rem; }
+            .book-content h2 { font-size: 1.6rem; }
+            .book-content p { font-size: 1rem; }
+        }
+
+        @media (max-width: 500px) {
+            .book-header h1 i { font-size: 1.8rem; margin: 0 4px; }
+            .ulama-grid { grid-template-columns: 1fr; }
+            .book-wrapper { padding: 1.2rem 0.8rem; }
+            .book-header .meta-line { gap: 0.8rem 1.5rem; font-size: 0.85rem; }
+        }
+
+        /* aksen tambahan */
+        .dot-ornament {
+            color: #b8a48b;
+            margin: 0 4px;
+        }
+
+        .text-gold {
+            color: #b8a48b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="book-wrapper">
+    <!-- HEADER BUKU -->
+    <div class="book-header">
+        <h1>
+            <i class="fas fa-book-open"></i> 
+            Negosiasi Takdir
+        </h1>
+        <div class="subtitle">Air Zamzam &amp; Isra Mi'raj</div>
+        <div class="meta-line">
+            <span><i class="fas fa-feather-alt"></i> Bacaan Iman & Amal</span>
+            <span><i class="fas fa-moon"></i> 27 Rajab · Perjalanan Agung</span>
+        </div>
+        <div style="margin-top: 8px;">
+            <span class="badge-waktu"><i class="fas fa-star"></i> 5 Waktu · 50 Rahmat</span>
+        </div>
+    </div>
+
+    <!-- ILUSTRASI TEMATIK -->
+    <div class="visual-spread">
+        <div class="visual-item">
+            <div class="icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
+            <span>Pembersihan Hati</span>
+        </div>
+        <div class="visual-item">
+            <div class="icon-circle"><i class="fas fa-water"></i></div>
+            <span>Air Zamzam</span>
+        </div>
+        <div class="visual-item">
+            <div class="icon-circle"><i class="fas fa-mosque"></i></div>
+            <span>Isra Mi'raj</span>
+        </div>
+        <div class="visual-item">
+            <div class="icon-circle"><i class="fas fa-praying-hands"></i></div>
+            <span>Doa & Ikhtiar</span>
+        </div>
+    </div>
+
+    <!-- ISI BUKU -->
+    <div class="book-content">
+
+        <!-- Pendahuluan -->
+        <h2><i class="fas fa-feather"></i> Pendahuluan</h2>
+        <p>Takdir Allah <span style="font-weight: 600; color:#e8e0d7;">ﷻ</span> bisa <em>“dinegosiasikan”</em> melalui ikhtiar, doa, dan amal saleh. Salah satu bukti nyata adalah peristiwa Isra Mi'raj, di mana air Zamzam digunakan untuk membersihkan hati Rasulullah ﷺ. Air Zamzam bukan sekadar air biasa — ia sesuai dengan niat peminumnya <span class="text-gold">(HR. Ibnu Majah)</span>.</p>
+        
+        <div class="ayat-indah">
+            <i class="fas fa-quote-left" style="margin-right:8px; color:#b8a48b;"></i> 
+            “Dan Kami turunkan dari langit air yang penuh berkah...” <span style="display:inline-block; font-style:normal; font-weight:400; color:#c9c0b5;">(QS. Qaf: 9)</span>
+        </div>
+
+        <!-- Bab 1 -->
+        <h2><i class="fas fa-heart"></i> Bab 1 · Pembelahan Dada & Air Zamzam</h2>
+        <p>Dalam peristiwa Isra Mi'raj, sebelum Rasulullah ﷺ dinaikkan ke langit, Malaikat Jibril AS membelah dadanya, mengeluarkan hati, lalu membersihkannya dengan air Zamzam. Ini adalah pembersihan keempat yang terjadi setelah pembersihan di masa kecil. Tujuan dari pembersihan ini adalah untuk membersihkan hati dari segala kotoran, melapangkan dada, dan memenuhinya dengan iman serta hikmah, agar beliau siap menerima wahyu dan perintah shalat.</p>
+        
+        <div class="hadits-box">
+            <p><i class="fas fa-quote-right"></i> “Atap rumahku terbuka... Jibril lalu turun dan membuka dadaku. Kemudian ia membersihkan dadaku dengan air Zamzam. Lalu ia membawa baskom emas yang penuh hikmah dan iman...” <br><span style="display:block; text-align:right; font-style:normal; margin-top:6px; color:#b8a48b;">— HR. Bukhari</span></p>
+        </div>
+
+        <!-- Bab 2 -->
+        <h2><i class="fas fa-hand-holding-water"></i> Bab 2 · Hikmah Air Zamzam</h2>
+        <p>Air Zamzam adalah simbol rahmat Allah yang menghubungkan langit dan bumi. Penggunaannya secara langsung oleh malaikat untuk membersihkan hati Nabi ﷺ menunjukkan keistimewaannya yang luar biasa. Hal ini mengajarkan kepada kita bahwa Allah memberikan sarana kepada hamba-Nya untuk membersihkan diri dan mengubah jalur takdir melalui keberkahan yang terkandung di dalamnya.</p>
+        
+        <div style="display:flex; justify-content:center; margin:1.2rem 0;">
+            <span style="background: #232c38; color:#ddd6cd; padding:0.3rem 2rem; border-radius:60px; font-weight:500; font-size:0.95rem; border:1px solid #3d4a59;">
+                <i class="fas fa-tint" style="color:#6ab0d4;"></i> “Zamzam, minuman yang diberkahi”
+            </span>
+        </div>
+
+        <!-- Bab 3 -->
+        <h2><i class="fas fa-star-and-crescent"></i> Bab 3 · Keutamaan Menurut Hadits & Ulama</h2>
+        <ul class="hadits-list">
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span class="hadits-text">“Air Zamzam itu sesuai dengan apa yang diniatkan peminumnya.”</span>
+                <span class="hadits-source">(HR. Jabir bin Abdullah)</span>
+            </li>
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span class="hadits-text">Air Zamzam adalah sebaik-baik air di muka bumi, makanan yang mengenyangkan, dan obat penyakit</span>
+                <span class="hadits-source">(HR. Muslim)</span>
+            </li>
+        </ul>
+
+        <!-- Bab 4 : Testimoni Ulama -->
+        <h2><i class="fas fa-users"></i> Bab 4 · Testimoni Para Ulama</h2>
+        <div class="ulama-grid">
+            <blockquote><strong>Ibnu Qayyim al-Jauziyyah</strong> — Beliau sembuh dari penyakitnya setelah meminum air Zamzam dengan niat kesembuhan.</blockquote>
+            <blockquote><strong>Ibnu Abbas &amp; Mujahid</strong> — Menjelaskan bahwa air Zamzam akan memenuhi segala hajat sesuai niat tulus.</blockquote>
+            <blockquote><strong>Banyak ulama</strong> — Menggunakan air Zamzam untuk memohon ilmu, rezeki, dan kesembuhan, lalu hajat mereka terkabul.</blockquote>
+        </div>
+
+        <!-- Bab 5 : Amal & Doa -->
+        <h2><i class="fas fa-pray"></i> Bab 5 · Amal Saleh, Doa & Praktik Zamzam</h2>
+        <p>Peristiwa negosiasi shalat dari 50 waktu menjadi 5 waktu mengajarkan kita tentang pentingnya ikhtiar dan doa. Amalkan shalat tepat waktu, perbanyak doa mustajab (terutama saat sujud dan sepertiga malam akhir), dan minumlah air Zamzam sambil berdoa dengan penuh keyakinan.</p>
+        
+        <div class="doa-highlight">
+            <p><i class="fas fa-hand-sparkles" style="color:#b8a48b; margin-right:10px;"></i> “Allahumma inni as’aluka ‘ilman nafi’an, wa rizqan wasi’an, wa syifa’an min kulli da’in.”</p>
+            <small><i class="fas fa-quote-left" style="color:#b8a48b;"></i> Ya Allah, aku memohon ilmu yang bermanfaat, rezeki yang luas, dan kesembuhan dari segala penyakit.</small>
+        </div>
+
+        <!-- Penutup -->
+        <h2><i class="fas fa-bookmark"></i> Penutup</h2>
+        <p>Air Zamzam mengajarkan bahwa rahmat Allah selalu tersedia bagi hamba-Nya yang beriman dan berikhtiar. Dengan iman yang kokoh, ikhtiar yang sungguh-sungguh, dan niat yang tulus, kita dapat <em>“bernegosiasi”</em> dengan takdir menuju kebaikan dunia dan akhirat. Semoga kita termasuk hamba yang diberi taufik untuk mengamalkan pelajaran berharga ini dalam kehidupan sehari-hari.</p>
+        
+        <div style="text-align:center; margin: 2rem 0 0.5rem;">
+            <span style="background: #b8a48b; color:#141a20; padding: 0.3rem 2.4rem; border-radius: 60px; font-size:0.9rem; display:inline-block; letter-spacing:0.4px; font-weight:600;">
+                <i class="fas fa-arrow-up"></i> Subhanallah wa bihamdih
+            </span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="book-footer">
+        <span><i class="fas fa-seedling"></i> Sumber terpercaya</span>
+        <span><i class="fas fa-dove"></i> Barakallah fīkum</span>
+        <span><i class="fas fa-book"></i> Edisi 1446 H</span>
+    </div>
+
+    <!-- ornamen bawah -->
+    <div style="text-align:center; margin-top: 1.5rem; color: #8a7a66; font-size:1.1rem; letter-spacing: 10px; opacity:0.2;">
+        ✦ ✦ ✦
+    </div>
+</div>
+
+</body>
+</html>
