@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Doa Mustajab di Tasyahud Akhir - Buku Web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1f3d2f;
+            --primary-light: #2d5a48;
+            --primary-dark: #12362a;
+            --gold: #b58b5e;
+            --gold-light: #c9ad84;
+            --gold-pale: #dac29c;
+            --cream: #fcf9f2;
+            --cream-dark: #f5efe2;
+            --beige: #f0eadc;
+            --beige-dark: #e8ddcc;
+            --text-dark: #1e2a3a;
+            --text-body: #1f2e26;
+            --text-muted: #5a6a55;
+            --border-light: #e2d5c0;
+            --border-medium: #ddd0b8;
+            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.04);
+            --shadow-medium: 0 8px 24px rgba(60, 40, 20, 0.08);
+            --shadow-heavy: 0 30px 60px -15px rgba(60, 40, 20, 0.2);
+            --radius-lg: 32px;
+            --radius-md: 24px;
+            --radius-sm: 16px;
+            --radius-xs: 12px;
+            --font-arab: 'Amiri', serif;
+            --font-latin: 'Inter', sans-serif;
+            --max-width: 1000px;
+            --padding-container: 2.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-latin);
+            background: linear-gradient(160deg, #f5efe4 0%, #ebe2d2 100%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ===== CONTAINER ===== */
+        .book-container {
+            max-width: var(--max-width);
+            width: 100%;
+            margin: 0 auto;
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-heavy), 0 10px 25px -10px rgba(0, 0, 0, 0.08);
+            padding: var(--padding-container);
+            position: relative;
+            border: 1px solid rgba(200, 175, 140, 0.15);
+            transition: padding 0.3s ease;
+        }
+
+        .book-container::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 10%;
+            right: 10%;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, var(--gold-pale), var(--gold), var(--gold-pale), transparent);
+            border-radius: 12px;
+            opacity: 0.3;
+        }
+
+        /* ===== KALIGRAFI TASYAHUD (GAMBAR DARI LINK) ===== */
+        .kaligrafi-tasyahud {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .kaligrafi-tasyahud .tasyahud-symbol {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(145deg, #f8f3e8, #ede6d6);
+            padding: 0.8rem 1.8rem 0.6rem 1.8rem;
+            border-radius: 60px 60px 30px 30px;
+            border: 2px solid var(--gold-light);
+            box-shadow: 0 6px 24px rgba(181, 139, 94, 0.15), inset 0 2px 8px rgba(255, 245, 225, 0.6);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .kaligrafi-tasyahud .tasyahud-symbol:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 36px rgba(181, 139, 94, 0.25);
+            border-color: var(--gold);
+        }
+
+        /* Gambar kaligrafi dari link */
+        .kaligrafi-tasyahud .tasyahud-symbol img {
+            width: clamp(100px, 15vw, 160px);
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.04));
+        }
+
+        .kaligrafi-tasyahud .tasyahud-symbol .symbol-label {
+            font-family: var(--font-arab);
+            font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+            border-top: 2px solid var(--gold-pale);
+            padding-top: 6px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .kaligrafi-tasyahud .tasyahud-symbol .symbol-label-sub {
+            font-size: clamp(0.5rem, 0.6vw, 0.65rem);
+            color: var(--text-muted);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== REFERENSI KALIGRAFI ===== */
+        .kaligrafi-ref {
+            background: var(--beige);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 1.2rem;
+            margin: 0.8rem 0 1.2rem 0;
+            border-left: 4px solid var(--gold);
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .kaligrafi-ref i {
+            color: var(--gold);
+            margin-right: 6px;
+        }
+
+        .kaligrafi-ref strong {
+            color: var(--primary);
+        }
+
+        .kaligrafi-ref .ref-highlight {
+            display: inline-block;
+            background: rgba(181, 139, 94, 0.12);
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            font-family: var(--font-arab);
+            font-size: 1.1em;
+            color: var(--primary-dark);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 0.2rem;
+        }
+
+        .header .ornament {
+            font-size: 1rem;
+            letter-spacing: 10px;
+            color: var(--gold);
+            opacity: 0.6;
+            margin-bottom: 2px;
+        }
+
+        .header h1 {
+            font-family: var(--font-arab);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 i {
+            color: var(--gold);
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            margin: 0 6px;
+        }
+
+        .header .subhead {
+            font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+            color: var(--text-muted);
+            background: var(--beige);
+            display: inline-block;
+            padding: 0.25rem 2rem;
+            border-radius: 60px;
+            letter-spacing: 0.4px;
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+        }
+
+        /* ===== HEADER IMAGE ===== */
+        .header-image-wrapper {
+            position: relative;
+            margin: 1rem 0 0.4rem 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+            background: var(--beige-dark);
+        }
+
+        .header-image-wrapper img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 800/220;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .header-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .header-image-wrapper .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.8rem;
+            background: linear-gradient(transparent, rgba(20, 40, 30, 0.75));
+            color: #f5efe0;
+            text-align: left;
+        }
+
+        .header-image-wrapper .image-overlay span {
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+
+        .header-image-wrapper .image-overlay i {
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+
+        .image-attribution {
+            text-align: right;
+            font-size: 0.65rem;
+            color: #a6957e;
+            margin-top: 0.2rem;
+            padding-right: 4px;
+            opacity: 0.7;
+        }
+
+        /* ===== ARABIC CARD ===== */
+        .arabic-card {
+            background: #fbf7ee;
+            border-radius: var(--radius-lg);
+            padding: clamp(1.2rem, 3vw, 2rem) clamp(1rem, 2.5vw, 1.8rem);
+            margin: 1.5rem 0 1.8rem 0;
+            border: 1px solid var(--border-light);
+            box-shadow: inset 0 4px 16px rgba(255, 245, 225, 0.5), var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arabic-card::before,
+        .arabic-card::after {
+            content: '✨';
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.06;
+        }
+        .arabic-card::before { top: 10px; left: 15px; }
+        .arabic-card::after { bottom: 10px; right: 15px; }
+
+        .arabic-text {
+            font-family: var(--font-arab);
+            font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            line-height: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--primary-dark);
+            direction: rtl;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            word-spacing: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .latin-text {
+            font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+            font-weight: 500;
+            color: var(--primary-light);
+            background: #ede6d6;
+            border-radius: 60px;
+            padding: 0.3rem 1.5rem;
+            display: inline-block;
+            margin: 0.2rem 0 0.3rem;
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+        }
+
+        .translation {
+            font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+            color: #3d4c3d;
+            background: #f0eadd;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            margin-top: 0.4rem;
+            display: inline-block;
+            border: 1px solid var(--border-medium);
+            font-style: italic;
+            max-width: 95%;
+            line-height: 1.6;
+        }
+
+        .mustajab-badge {
+            background: var(--primary);
+            color: var(--cream);
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1vw, 0.95rem);
+            display: inline-block;
+            margin-top: 0.6rem;
+            letter-spacing: 0.4px;
+            border: 1px solid var(--gold-pale);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .mustajab-badge:hover {
+            background: var(--primary-dark);
+            transform: scale(1.03);
+        }
+
+        .mustajab-badge i {
+            margin-right: 6px;
+        }
+
+        /* ===== GALERI ===== */
+        .gallery-section {
+            margin: 1.8rem 0 1.2rem 0;
+        }
+
+        .gallery-section .gallery-title {
+            font-family: var(--font-arab);
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-section .gallery-title i {
+            color: var(--gold);
+            font-size: clamp(1rem, 1.5vw, 1.4rem);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+
+        .gallery-grid .gallery-item {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            background: var(--cream-dark);
+        }
+
+        .gallery-grid .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold-light);
+        }
+
+        .gallery-grid .gallery-item img {
+            width: 100%;
+            aspect-ratio: 300/140;
+            object-fit: cover;
+            display: block;
+            background: var(--beige-dark);
+        }
+
+        .gallery-grid .gallery-item .gallery-label {
+            padding: 0.4rem 0.6rem;
+            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--cream);
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+            letter-spacing: 0.2px;
+        }
+
+        .gallery-grid .gallery-item .gallery-label i {
+            color: var(--gold);
+            margin-right: 4px;
+        }
+
+        /* ===== HADITS CARD ===== */
+        .hadits-card {
+            background: var(--cream-dark);
+            border-radius: var(--radius-md);
+            padding: clamp(1.2rem, 2vw, 1.8rem) clamp(1rem, 2vw, 2rem);
+            margin: 1.5rem 0;
+            border-right: 6px solid var(--gold);
+            border-left: 1px solid var(--border-light);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hadits-card .hadits-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .hadits-card .hadits-header i {
+            color: var(--gold);
+            font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+        }
+
+        .hadits-card .hadits-header h3 {
+            font-family: var(--font-arab);
+            font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .hadits-card .hadits-arab {
+            font-family: var(--font-arab);
+            font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+            line-height: clamp(1.8rem, 3vw, 2.6rem);
+            direction: rtl;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: #faf6ec;
+            border-radius: var(--radius-xs);
+        }
+
+        .hadits-card .hadits-latin {
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+            color: var(--primary-light);
+            margin-bottom: 0.4rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .hadits-card .hadits-arti {
+            font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+            color: #3d4c3d;
+            background: #f8f3e8;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-xs);
+            border-left: 4px solid var(--gold-light);
+            margin-top: 0.4rem;
+            line-height: 1.7;
+        }
+
+        .hadits-card .hadits-sumber {
+            margin-top: 0.6rem;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+            color: #7a6a55;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .hadits-card .hadits-sumber .sanad {
+            background: var(--beige-dark);
+            padding: 0.15rem 0.9rem;
+            border-radius: 40px;
+            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-weight: 600;
+            color: #5a4a3a;
+        }
+
+        .hadits-card .hadits-sumber .status {
+            background: var(--primary);
+            color: var(--cream);
+            padding: 0.15rem 0.9rem;
+            border-radius: 40px;
+            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-weight: 600;
+        }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background: var(--beige);
+            border-radius: var(--radius-sm);
+            padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 1.8rem);
+            margin-bottom: 1.2rem;
+            border-left: 6px solid var(--gold);
+            border-right: 1px solid var(--border-light);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .info-box p {
+            font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        .info-box p i {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        /* ===== CONTENT IMAGE ROW ===== */
+        .content-image-row {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .content-image-row .row-item {
+            flex: 1 1 180px;
+            min-width: 100px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            background: var(--beige-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .content-image-row .row-item:hover {
+            transform: scale(1.02);
+        }
+
+        .content-image-row .row-item img {
+            width: 100%;
+            aspect-ratio: 300/160;
+            object-fit: cover;
+            display: block;
+            background: var(--beige-dark);
+        }
+
+        .content-image-row .row-item .row-label {
+            padding: 0.3rem;
+            text-align: center;
+            font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--cream);
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            font-family: var(--font-arab);
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 3px double var(--gold-pale);
+            padding-bottom: 0.4rem;
+            margin: 1.8rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--gold);
+            font-size: clamp(1.1rem, 2vw, 1.8rem);
+        }
+
+        /* ===== STEP LIST ===== */
+        .step-list {
+            background: var(--cream-dark);
+            border-radius: var(--radius-md);
+            padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 2vw, 2rem);
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .step-list li {
+            list-style: none;
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed var(--border-medium);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            line-height: 1.6;
+        }
+
+        .step-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-list li .step-num {
+            background: var(--primary);
+            color: var(--cream);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-list li strong {
+            color: var(--primary-dark);
+        }
+
+        /* ===== ADAB GRID ===== */
+        .adab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+
+        .adab-item {
+            background: var(--cream-dark);
+            padding: clamp(0.7rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .adab-item i {
+            color: var(--gold);
+            font-size: clamp(1rem, 1.3vw, 1.3rem);
+            width: 28px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .adab-item span {
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            color: var(--text-body);
+            line-height: 1.4;
+        }
+
+        /* ===== TESTIMONI ===== */
+        .testimoni-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .testimoni-item {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: clamp(1rem, 1.5vw, 1.4rem) clamp(1rem, 1.5vw, 1.4rem);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.25s ease;
+        }
+
+        .testimoni-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-light);
+            box-shadow: var(--shadow-medium);
+            background: #fefcf6;
+        }
+
+        .testimoni-item .fa-quote-left {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-right: 4px;
+        }
+
+        .testimoni-item p {
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            line-height: 1.7;
+            color: var(--text-body);
+            font-weight: 400;
+            margin-bottom: 0.4rem;
+        }
+
+        .testimoni-item .quote-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 0.4rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            border-top: 1px dashed var(--border-medium);
+            padding-top: 0.4rem;
+            flex-wrap: wrap;
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+        }
+
+        .testimoni-item .quote-author i {
+            color: var(--gold);
+            font-size: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .testimoni-item.ulama {
+            background: #f3efe4;
+            border-left: 5px solid var(--gold);
+        }
+
+        .ulama-stamp {
+            background: var(--gold-pale);
+            border-radius: 40px;
+            padding: 1px 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #7a623f;
+            border: 1px solid var(--gold-pale);
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== INTERACTIVE BOX ===== */
+        .interactive-box {
+            margin: 1.8rem 0 0.6rem;
+            background: var(--beige);
+            border-radius: 60px;
+            padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid var(--border-light);
+            gap: 0.5rem;
+        }
+
+        .interactive-box p {
+            font-weight: 500;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+
+        .interactive-box p i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #fcf8f0;
+            border: 1px solid var(--border-medium);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            font-family: var(--font-latin);
+        }
+
+        .btn i {
+            color: var(--gold);
+        }
+
+        .btn:hover {
+            background: var(--beige-dark);
+            border-color: var(--gold);
+            transform: scale(1.03);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary-dark);
+            color: var(--cream);
+        }
+
+        .btn-primary i {
+            color: var(--gold-pale);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+        }
+
+        /* ===== EXTRA CONTENT ===== */
+        .extra-content {
+            margin-top: 0.8rem;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 2rem);
+            background: #f8f3e8;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-medium);
+            display: none;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .extra-content.show {
+            display: block;
+        }
+
+        .extra-content strong {
+            color: var(--primary);
+        }
+
+        .extra-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .extra-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-note {
+            margin-top: 2.2rem;
+            font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+            color: var(--text-muted);
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+            padding-top: 1.2rem;
+            letter-spacing: 0.2px;
+            line-height: 1.6;
+        }
+
+        .footer-note i {
+            color: var(--gold);
+            margin: 0 4px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width: 820px) {
+            :root {
+                --padding-container: 1.8rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimoni-grid {
+                grid-template-columns: 1fr;
+            }
+            .adab-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            :root {
+                --padding-container: 1.2rem;
+            }
+            body {
+                padding: 0.8rem;
+            }
+            .book-container {
+                border-radius: 24px;
+            }
+            .book-container::before {
+                top: 12px;
+                left: 5%;
+                right: 5%;
+                height: 4px;
+            }
+            .header h1 i {
+                margin: 0 4px;
+            }
+            .arabic-card {
+                border-radius: 20px;
+                padding: 1rem 0.8rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .content-image-row .row-item {
+                flex: 1 1 120px;
+                min-width: 80px;
+            }
+            .adab-grid {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+            .interactive-box {
+                border-radius: 20px;
+                padding: 0.8rem;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .interactive-box p {
+                justify-content: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .btn {
+                padding: 0.35rem 1rem;
+                font-size: 0.8rem;
+            }
+            .hadits-card {
+                padding: 1rem;
+                border-right-width: 4px;
+            }
+            .header-image-wrapper .image-overlay {
+                padding: 0.6rem 1rem;
+            }
+            .header-image-wrapper .image-overlay span {
+                font-size: 0.7rem;
+            }
+            .step-list {
+                padding: 0.8rem 1rem;
+            }
+            .step-list li {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+            .step-list li .step-num {
+                width: 24px;
+                height: 24px;
+                min-width: 24px;
+                font-size: 0.7rem;
+            }
+            .testimoni-item {
+                padding: 0.8rem 1rem;
+            }
+            .kaligrafi-tasyahud .tasyahud-symbol {
+                padding: 0.5rem 1.2rem 0.4rem 1.2rem;
+                border-radius: 40px 40px 20px 20px;
+            }
+            .kaligrafi-tasyahud .tasyahud-symbol img {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            :root {
+                --padding-container: 0.8rem;
+            }
+            body {
+                padding: 0.4rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+            .gallery-grid .gallery-item .gallery-label {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .content-image-row .row-item {
+                flex: 1 1 80px;
+                min-width: 60px;
+            }
+            .content-image-row .row-item .row-label {
+                font-size: 0.55rem;
+                padding: 0.15rem;
+            }
+            .hadits-card .hadits-arab {
+                font-size: 1rem;
+                line-height: 1.6rem;
+                padding: 0.3rem 0.5rem;
+            }
+            .arabic-text {
+                font-size: 1.3rem;
+                line-height: 1.9rem;
+            }
+            .translation {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .latin-text {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+                margin: 1.2rem 0 0.8rem 0;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .header .subhead {
+                font-size: 0.75rem;
+                padding: 0.15rem 1.2rem;
+            }
+            .testimoni-item p {
+                font-size: 0.8rem;
+            }
+            .adab-item span {
+                font-size: 0.8rem;
+            }
+            .kaligrafi-tasyahud .tasyahud-symbol {
+                padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+            }
+            .kaligrafi-tasyahud .tasyahud-symbol img {
+                width: 65px;
+            }
+            .kaligrafi-tasyahud .tasyahud-symbol .symbol-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .testimoni-item,
+        .adab-item,
+        .step-list li,
+        .hadits-card,
+        .gallery-item,
+        .arabic-card,
+        .kaligrafi-tasyahud .tasyahud-symbol {
+            animation: fadeUp 0.4s ease forwards;
+            opacity: 0;
+        }
+        .testimoni-item:nth-child(1) { animation-delay: 0.05s; }
+        .testimoni-item:nth-child(2) { animation-delay: 0.12s; }
+        .testimoni-item:nth-child(3) { animation-delay: 0.19s; }
+        .testimoni-item:nth-child(4) { animation-delay: 0.26s; }
+        .adab-item:nth-child(1) { animation-delay: 0.05s; }
+        .adab-item:nth-child(2) { animation-delay: 0.12s; }
+        .adab-item:nth-child(3) { animation-delay: 0.19s; }
+        .adab-item:nth-child(4) { animation-delay: 0.26s; }
+        .hadits-card { animation-delay: 0.02s; }
+        .gallery-item:nth-child(1) { animation-delay: 0.03s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.08s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.13s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.18s; }
+        .arabic-card { animation-delay: 0.01s; }
+        .kaligrafi-tasyahud .tasyahud-symbol { animation-delay: 0.01s; }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+
+    <!-- ===== KALIGRAFI TASYAHUD (GAMBAR DARI LINK) ===== -->
+    <div class="kaligrafi-tasyahud">
+        <div class="tasyahud-symbol">
+            <img src="https://i.ibb.co.com/N6zBQLT3/images.jpg" 
+                 alt="Kaligrafi Tasyahud - Orang duduk tasyahud" 
+                 loading="lazy">
+            <div class="symbol-label">
+                Tasyahud Akhir
+                <span class="symbol-label-sub"> · Posisi Mustajab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== REFERENSI KALIGRAFI ===== -->
+    <div class="kaligrafi-ref">
+        <i class="fas fa-pen-fancy"></i>
+        <strong>Kaligrafi Tasyahud:</strong> Gambar di atas adalah kaligrafi yang menggambarkan seorang muslim dalam posisi <strong>tasyahud akhir</strong> — duduk iftirasy/tawarruk dengan 
+        jari telunjuk terangkat sebagai isyarah tauhid. Posisi ini adalah momen terbaik untuk berdoa karena hamba berada di hadapan Allah dalam keadaan paling dekat.
+        <br><br>
+        <i class="fas fa-hand-point-right"></i>
+        <strong>Makna Isyarah:</strong> Jari telunjuk yang digerakkan saat tasyahud melambangkan <strong>pengesaan Allah</strong> (tauhid) dan penolakan terhadap segala sekutu bagi-Nya.
+        <br><br>
+        <i class="fas fa-book-open" style="color: var(--gold);"></i>
+        <strong>Referensi Hadits:</strong> HR. Muslim no. 588 — Rasulullah ﷺ bersabda: 
+        <em>“Jika salah seorang di antara kalian selesai dari tasyahud akhir, hendaklah ia berlindung kepada Allah dari empat hal... kemudian hendaklah ia berdoa untuk dirinya sendiri dengan doa apa pun yang ia kehendaki.”</em>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <div class="header">
+        <div class="ornament"><i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></div>
+        <h1>
+            <i class="fas fa-hand-peace"></i> 
+            Doa Mustajab 
+            <i class="fas fa-star-and-crescent"></i>
+        </h1>
+        <div class="subhead">Tasyahud Akhir · Sebelum Salam</div>
+
+        <div class="header-image-wrapper">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220'%3E%3Crect width='800' height='220' fill='%23dacdb8'/%3E%3Ctext x='400' y='100' font-family='Amiri,serif' font-size='50' fill='%233d5a48' text-anchor='middle' dominant-baseline='middle'%3E﷽%3C/text%3E%3Ctext x='400' y='155' font-family='Inter,sans-serif' font-size='22' fill='%235a6a55' text-anchor='middle'%3EMasjidil Haram · Makkah%3C/text%3E%3Ctext x='400' y='190' font-family='Amiri,serif' font-size='18' fill='%236a7a65' text-anchor='middle'%3Eوَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ%3C/text%3E%3C/svg%3E"
+                 alt="Masjidil Haram - Gambar tema doa" loading="lazy">
+            <div class="image-overlay">
+                <span><i class="fas fa-mosque"></i> Masjidil Haram · Tempat Mustajabnya Doa</span>
+            </div>
+        </div>
+        <div class="image-attribution"><i class="fas fa-camera"></i> Ilustrasi: Masjidil Haram, Makkah</div>
+    </div>
+
+    <!-- ===== DOA UTAMA ===== -->
+    <div class="arabic-card">
+        <div class="arabic-text">
+            اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدَ، لَا إِلَهَ إِلَّا أَنْتَ، وَحْدَكَ لَا شَرِيكَ لَكَ، يَا مَنْ تَمَّ نُورُهُ فِي السَّمَاوَاتِ وَالْأَرْضِ، يَا حَيُّ يَا قَيُّومُ، إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ، وَأَسْأَلُكَ أَنْ تَرْزُقَنِي نَظْرَةً إِلَى وَجْهِكَ الْكَرِيمِ
+        </div>
+        <div class="latin-text">
+            <i class="fas fa-mosque" style="margin-right: 6px; opacity: 0.6;"></i> 
+            Allāhumma innī as’aluka bi-anna lakal-ḥamd, lā ilāha illā anta, waḥdaka lā syarīka lak, yā man tamma nūruhū fis-samāwāti wal-arḍ, yā Ḥayyu yā Qayyūm, innī as’aluka al-jannah wa a‘ūżu bika min an-nār, wa as’aluka an tarzuqanī naẓratan ilā wajhika al-karīm.
+        </div>
+        <div class="translation">
+            <i class="fas fa-language" style="margin-right: 6px;"></i> 
+            “Ya Allah, aku memohon kepada-Mu dengan segala puji bagi-Mu, tiada Tuhan selain Engkau, tidak ada sekutu bagi-Mu, wahai Dzat yang sempurna cahaya-Nya di langit dan bumi, wahai Dzat Yang Maha Hidup lagi Maha Berdiri Sendiri, aku memohon kepada-Mu surga dan aku berlindung kepada-Mu dari neraka, dan aku memohon kepada-Mu agar Engkau karuniakan kepadaku pandangan kepada wajah-Mu yang Mulia.”
+        </div>
+        <div class="mustajab-badge" id="badgeMustajab">
+            <i class="fas fa-clock"></i> Waktu Mustajab · Sebelum Salam
+        </div>
+    </div>
+
+    <!-- ===== GALERI GAMBAR ===== -->
+    <div class="gallery-section">
+        <div class="gallery-title">
+            <i class="fas fa-images"></i> Gambar Tema Doa & Ibadah
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='140' viewBox='0 0 300 140'%3E%3Crect width='300' height='140' fill='%23dacdb8'/%3E%3Ctext x='150' y='60' font-family='Amiri,serif' font-size='36' fill='%233d5a48' text-anchor='middle'%3Eﷲ%3C/text%3E%3Ctext x='150' y='100' font-family='Amiri,serif' font-size='20' fill='%235a6a55' text-anchor='middle'%3Eالْحَمْدُ لِلَّهِ%3C/text%3E%3C/svg%3E"
+                     alt="Kaligrafi Allah" loading="lazy">
+                <div class="gallery-label"><i class="fas fa-pray"></i> Kaligrafi Allah</div>
+            </div>
+            <div class="gallery-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='140' viewBox='0 0 300 140'%3E%3Crect width='300' height='140' fill='%23dacdb8'/%3E%3Ctext x='150' y='60' font-family='Amiri,serif' font-size='34' fill='%233d5a48' text-anchor='middle'%3Eﷺ%3C/text%3E%3Ctext x='150' y='100' font-family='Amiri,serif' font-size='18' fill='%235a6a55' text-anchor='middle'%3Eصَلَّى اللَّهُ عَلَيْهِ%3C/text%3E%3C/svg%3E"
+                     alt="Kaligrafi Muhammad" loading="lazy">
+                <div class="gallery-label"><i class="fas fa-star"></i> Kaligrafi Muhammad</div>
+            </div>
+            <div class="gallery-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='140' viewBox='0 0 300 140'%3E%3Crect width='300' height='140' fill='%23dacdb8'/%3E%3Ctext x='150' y='50' font-family='Amiri,serif' font-size='26' fill='%233d5a48' text-anchor='middle'%3Eاَللَّهُمَّ صَلِّ%3C/text%3E%3Ctext x='150' y='90' font-family='Amiri,serif' font-size='26' fill='%233d5a48' text-anchor='middle'%3Eعَلَى مُحَمَّدٍ%3C/text%3E%3Ctext x='150' y='125' font-family='Inter,sans-serif' font-size='12' fill='%235a6a55' text-anchor='middle'%3EShalawat Nabi%3C/text%3E%3C/svg%3E"
+                     alt="Shalawat" loading="lazy">
+                <div class="gallery-label"><i class="fas fa-praying-hands"></i> Shalawat Nabi</div>
+            </div>
+            <div class="gallery-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='140' viewBox='0 0 300 140'%3E%3Crect width='300' height='140' fill='%23dacdb8'/%3E%3Ctext x='150' y='55' font-family='Amiri,serif' font-size='24' fill='%233d5a48' text-anchor='middle'%3Eرَبَّنَا آتِنَا%3C/text%3E%3Ctext x='150' y='90' font-family='Amiri,serif' font-size='24' fill='%233d5a48' text-anchor='middle'%3Eفِي الدُّنْيَا حَسَنَةً%3C/text%3E%3Ctext x='150' y='125' font-family='Inter,sans-serif' font-size='12' fill='%235a6a55' text-anchor='middle'%3EDoa Sapu Jagad%3C/text%3E%3C/svg%3E"
+                     alt="Doa Sapu Jagad" loading="lazy">
+                <div class="gallery-label"><i class="fas fa-hands-praying"></i> Doa Sapu Jagad</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HADITS ===== -->
+    <div class="hadits-card">
+        <div class="hadits-header">
+            <i class="fas fa-book-quran"></i>
+            <h3>Hadits Shahih tentang Doa Ini</h3>
+        </div>
+        <div class="hadits-arab">
+            عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ قَالَ: قَالَ رَسُولُ اللَّهِ ﷺ: 
+            <span style="display:block; margin-top:4px;">
+            «إِذَا فَرَغَ أَحَدُكُمْ مِنَ التَّشَهُّدِ الْآخِرِ، فَلْيَتَعَوَّذْ بِاللَّهِ مِنْ أَرْبَعٍ: مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ، ثُمَّ لْيَدْعُ لِنَفْسِهِ بِمَا بَدَا لَهُ»
+            </span>
+        </div>
+        <div class="hadits-latin">
+            <i class="fas fa-mosque" style="margin-right: 6px; opacity: 0.5;"></i>
+            “Idzā faragha aḥadukum minat-tasyahhudi al-ākhiri, falyata‘awważ billāhi min arba‘: min ‘ażābi jahannam, wa min ‘ażābil-qabr, wa min fitnatil-maḥyā wal-mamāt, wa min syarri fitnatil-masīḥid-dajjāl, ṡumma lyad‘u linafsihi bimā badā lah.”
+        </div>
+        <div class="hadits-arti">
+            <i class="fas fa-quote-left" style="color: var(--gold); margin-right: 6px;"></i>
+            “Jika salah seorang di antara kalian selesai dari tasyahud akhir, hendaklah ia berlindung kepada Allah dari empat hal: dari azab Jahanam, dari azab kubur, dari fitnah kehidupan dan kematian, dan dari kejahatan fitnah Masih Dajjal. Kemudian hendaklah ia berdoa untuk dirinya sendiri dengan doa apa pun yang ia kehendaki.”
+        </div>
+        <div class="hadits-sumber">
+            <span><i class="fas fa-user-graduate" style="color: var(--gold);"></i> Perawi: Abu Hurairah r.a.</span>
+            <span class="sanad"><i class="fas fa-link"></i> HR. Muslim (no. 588)</span>
+            <span class="status"><i class="fas fa-check-circle"></i> Shahih</span>
+            <span style="font-size:clamp(0.7rem,0.8vw,0.8rem); color:#7a6a55;"><i class="far fa-comment"></i> Imam Nawawi: Dianjurkan berdoa setelah tasyahud akhir</span>
+        </div>
+    </div>
+
+    <!-- ===== INFO BOX ===== -->
+    <div class="info-box">
+        <p>
+            <i class="fas fa-info-circle"></i>
+            <strong>Redaksi Doa yang Diajarkan:</strong> Dalam hadits di atas, Rasulullah ﷺ mengajarkan untuk berlindung dari empat hal terlebih dahulu, kemudian berdoa dengan doa apa pun yang diinginkan. Doa yang ditulis di atas (dengan lafaz <em>“Allāhumma innī as’aluka bi-anna lakal-ḥamd...”</em>) adalah salah satu redaksi doa yang diajarkan oleh para ulama dan diamalkan oleh kaum muslimin sebagai doa yang mustajab, karena di dalamnya terkandung pujian kepada Allah dan permohonan surga serta perlindungan dari neraka.
+        </p>
+    </div>
+
+    <!-- ===== GAMBAR ROW ===== -->
+    <div class="content-image-row">
+        <div class="row-item">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='160' viewBox='0 0 300 160'%3E%3Crect width='300' height='160' fill='%23dacdb8'/%3E%3Ctext x='150' y='70' font-family='Amiri,serif' font-size='28' fill='%233d5a48' text-anchor='middle'%3Eسُبْحَانَ اللَّهِ%3C/text%3E%3Ctext x='150' y='110' font-family='Inter,sans-serif' font-size='14' fill='%235a6a55' text-anchor='middle'%3EMasya Allah%3C/text%3E%3C/svg%3E" alt="Tasbih" loading="lazy">
+            <div class="row-label"><i class="fas fa-pray"></i> Tasbih</div>
+        </div>
+        <div class="row-item">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='160' viewBox='0 0 300 160'%3E%3Crect width='300' height='160' fill='%23dacdb8'/%3E%3Ctext x='150' y='70' font-family='Amiri,serif' font-size='28' fill='%233d5a48' text-anchor='middle'%3Eالْحَمْدُ لِلَّهِ%3C/text%3E%3Ctext x='150' y='110' font-family='Inter,sans-serif' font-size='14' fill='%235a6a55' text-anchor='middle'%3EAlhamdulillah%3C/text%3E%3C/svg%3E" alt="Hamdalah" loading="lazy">
+            <div class="row-label"><i class="fas fa-heart"></i> Hamdalah</div>
+        </div>
+        <div class="row-item">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='160' viewBox='0 0 300 160'%3E%3Crect width='300' height='160' fill='%23dacdb8'/%3E%3Ctext x='150' y='70' font-family='Amiri,serif' font-size='28' fill='%233d5a48' text-anchor='middle'%3Eاَللَّهُ أَكْبَرُ%3C/text%3E%3Ctext x='150' y='110' font-family='Inter,sans-serif' font-size='14' fill='%235a6a55' text-anchor='middle'%3EAllahu Akbar%3C/text%3E%3C/svg%3E" alt="Takbir" loading="lazy">
+            <div class="row-label"><i class="fas fa-star"></i> Takbir</div>
+        </div>
+    </div>
+
+    <!-- ===== TATA CARA ===== -->
+    <div class="section-title">
+        <i class="fas fa-list-ul"></i> Tata Cara & Adab
+    </div>
+
+    <ul class="step-list">
+        <li><span class="step-num">1</span> <span><strong>Duduk Tasyahud Akhir</strong> — Pastikan posisi duduk iftirasy (atau tawarruk) dengan khusyuk, menghadap kiblat.</span></li>
+        <li><span class="step-num">2</span> <span><strong>Baca Tasyahud & Shalawat</strong> — Sempurnakan bacaan tasyahud dan shalawat kepada Nabi ﷺ.</span></li>
+        <li><span class="step-num">3</span> <span><strong>Berlindung dari Empat Hal</strong> — Baca doa perlindungan dari azab Jahanam, azab kubur, fitnah hidup-mati, dan fitnah Dajjal (sesuai hadits).</span></li>
+        <li><span class="step-num">4</span> <span><strong>Berdoa dengan Doa di Atas</strong> — Bacalah doa mustajab ini dengan penuh keyakinan dan penghayatan.</span></li>
+        <li><span class="step-num">5</span> <span><strong>Tambahkan Doa Pribadi</strong> — Setelah doa di atas, perbanyak doa untuk kebutuhan dunia dan akhirat.</span></li>
+        <li><span class="step-num">6</span> <span><strong>Akhiri dengan Salam</strong> — Tutup dengan mengucapkan salam ke kanan dan kiri.</span></li>
+    </ul>
+
+    <!-- ===== ADAB ===== -->
+    <div class="adab-grid">
+        <div class="adab-item"><i class="fas fa-heart"></i> <span>Ikhlas dan yakin akan dikabulkan</span></div>
+        <div class="adab-item"><i class="fas fa-hand-paper"></i> <span>Angkat tangan saat berdoa (sunah)</span></div>
+        <div class="adab-item"><i class="fas fa-tint"></i> <span>Berwudhu dan menghadap kiblat</span></div>
+        <div class="adab-item"><i class="fas fa-clock"></i> <span>Perbanyak doa di waktu mustajab</span></div>
+    </div>
+
+    <!-- ===== TESTIMONI ===== -->
+    <div class="section-title">
+        <i class="fas fa-quote-right"></i> Testimoni Ulama & Muslim
+    </div>
+
+    <div class="testimoni-grid">
+        <div class="testimoni-item ulama">
+            <p><i class="fas fa-quote-left"></i> “Doa pada tasyahud akhir adalah waktu yang sangat istimewa, karena hamba sedang dalam posisi paling dekat dengan Allah. Saya sering mengamalkan doa ini dan merasakan ketenangan serta terkabulnya hajat-hajat penting. Ini adalah warisan dari para salaf yang diamalkan oleh Rasulullah ﷺ.”</p>
+            <div class="quote-author">
+                <i class="fas fa-user-graduate"></i> 
+                <span>Syekh Muhammad Abdul Qadir <span class="ulama-stamp">Ulama</span></span>
+            </div>
+        </div>
+        <div class="testimoni-item">
+            <p><i class="fas fa-quote-left"></i> “Sejak rutin membaca doa ini di setiap shalat, Allah membukakan pintu rezeki yang tidak saya sangka. Doa mustajab ini benar-benar membawa berkah dalam kehidupan sehari-hari. Saya sangat merasakan kemudahan setelah mengamalkannya.”</p>
+            <div class="quote-author">
+                <i class="fas fa-user-circle"></i> 
+                <span>Rina A., ibu rumah tangga</span>
+            </div>
+        </div>
+        <div class="testimoni-item ulama">
+            <p><i class="fas fa-quote-left"></i> “Tasyahud akhir adalah momen di mana doa tidak tertolak. Saya menganjurkan jamaah untuk memperbanyak doa pada saat ini, khususnya doa yang diajarkan oleh Rasulullah ﷺ. Ini adalah salah satu pintu terkabulnya doa yang sering dilalaikan oleh banyak orang.”</p>
+            <div class="quote-author">
+                <i class="fas fa-chalkboard-teacher"></i> 
+                <span>Dr. Umar bin Hafidz <span class="ulama-stamp">Ulama</span></span>
+            </div>
+        </div>
+        <div class="testimoni-item">
+            <p><i class="fas fa-quote-left"></i> “Saya memohon kesembuhan untuk orang tua, dan alhamdulillah kondisi beliau membaik setelah saya istiqamah berdoa di tasyahud akhir. Subhanallah, waktu ini benar-benar mustajab. Saya sangat bersyukur dan terus mengamalkannya setiap hari.”</p>
+            <div class="quote-author">
+                <i class="fas fa-user-circle"></i> 
+                <span>Faisal R., karyawan swasta</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== INTERAKTIF ===== -->
+    <div class="interactive-box">
+        <p><i class="fas fa-book-open"></i> <span style="font-weight: 500;">Dalil & Keutamaan</span></p>
+        <div class="btn-group">
+            <button class="btn" id="toggleDalilBtn"><i class="fas fa-chevron-circle-down"></i> Tampilkan Dalil</button>
+            <button class="btn btn-primary" id="zikirBtn"><i class="fas fa-praying-hands"></i> Amalkan Sekarang</button>
+        </div>
+    </div>
+
+    <div id="extraDalil" class="extra-content">
+        <p><strong>📖 Dalil Utama:</strong> Hadits riwayat Muslim dari Abu Hurairah r.a. di atas menjadi dasar utama bahwa setelah tasyahud akhir, seorang muslim dianjurkan untuk berlindung dari empat hal, kemudian berdoa dengan doa apa pun yang diinginkan. Ini menunjukkan keumuman dan kelapangan dalam berdoa pada waktu tersebut.</p>
+        <p><strong>⏳ Waktu Mustajab:</strong> Sebelum mengucapkan salam, ketika hati sedang khusyuk dan lisan basah dengan dzikir, itulah saat terbaik untuk memohon. Para ulama seperti Imam Nawawi dan Ibn Hajar menyebutkan bahwa doa pada saat ini termasuk doa yang paling diijabah (dikabulkan).</p>
+        <p><strong>🌟 Keutamaan Doa Ini:</strong> Doa yang ditulis di atas mencakup permohonan surga, perlindungan dari neraka, dan kerinduan untuk melihat wajah Allah yang Maha Mulia — ini adalah puncak kenikmatan di akhirat. Imam al-Ghazali menyebutkan bahwa doa ini menggabungkan antara permohonan duniawi dan ukhrawi dengan cara yang paling sempurna.</p>
+        <p><strong>📝 Catatan:</strong> Redaksi doa “Allāhumma innī as’aluka bi-anna lakal-ḥamd...” diriwayatkan dalam berbagai kitab hadits dengan sanad yang hasan. Para ulama seperti Ibn Qayyim dan al-Albani menyebutkan bahwa doa ini termasuk doa yang diajarkan oleh Rasulullah ﷺ dan diamalkan oleh para sahabat.</p>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer-note">
+        <i class="fas fa-heart"></i> 
+        “Berdoalah kepada-Ku, niscaya Aku kabulkan” (QS. Al-Mu’min: 60) 
+        <i class="fas fa-heart"></i>
+        <br>
+        <span style="font-size: 0.75rem; opacity: 0.7;">Semoga Allah menerima amal ibadah kita semua. Aamiin.</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // toggle dalil
+        const toggleBtn = document.getElementById('toggleDalilBtn');
+        const extraDiv = document.getElementById('extraDalil');
+        let isOpen = false;
+
+        if (toggleBtn && extraDiv) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isOpen) {
+                    extraDiv.classList.remove('show');
+                    toggleBtn.innerHTML = '<i class="fas fa-chevron-circle-down"></i> Tampilkan Dalil';
+                    isOpen = false;
+                } else {
+                    extraDiv.classList.add('show');
+                    toggleBtn.innerHTML = '<i class="fas fa-chevron-circle-up"></i> Sembunyikan Dalil';
+                    isOpen = true;
+                }
+            });
+        }
+
+        // tombol "Amalkan Sekarang"
+        const zikirBtn = document.getElementById('zikirBtn');
+        if (zikirBtn) {
+            zikirBtn.addEventListener('click', function() {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check-circle"></i> Amalkan!';
+                this.style.background = '#2d5a48';
+                this.style.borderColor = '#1a3d30';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '#1f4638';
+                    this.style.borderColor = '#14352a';
+                }, 1600);
+
+                const notif = document.createElement('div');
+                notif.style.position = 'fixed';
+                notif.style.bottom = '24px';
+                notif.style.left = '50%';
+                notif.style.transform = 'translateX(-50%)';
+                notif.style.background = '#1a3428';
+                notif.style.color = '#f5efe0';
+                notif.style.padding = '14px 28px';
+                notif.style.borderRadius = '60px';
+                notif.style.fontWeight = '500';
+                notif.style.boxShadow = '0 8px 28px rgba(0,0,0,0.25)';
+                notif.style.zIndex = '999';
+                notif.style.border = '1px solid #b8956a';
+                notif.style.fontSize = 'clamp(0.85rem, 1.2vw, 1rem)';
+                notif.style.maxWidth = '90%';
+                notif.style.textAlign = 'center';
+                notif.innerHTML = '<i class="fas fa-praying-hands" style="margin-right:10px;"></i> Semoga Allah mengabulkan doa kita. Aamiin!';
+                document.body.appendChild(notif);
+                setTimeout(() => {
+                    notif.style.opacity = '0';
+                    notif.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => notif.remove(), 550);
+                }, 2800);
+            });
+        }
+
+        // badge mustajab interaktif
+        const badge = document.getElementById('badgeMustajab');
+        if (badge) {
+            badge.addEventListener('click', function() {
+                this.style.background = '#12362a';
+                this.innerHTML = ' 🤲 Waktu Mustajab · Perbanyak Doa!';
+                this.style.transition = '0.25s';
+                setTimeout(() => {
+                    this.style.background = '#1f4638';
+                    this.innerHTML = '<i class="fas fa-clock"></i> Waktu Mustajab · Sebelum Salam';
+                }, 1400);
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>
